@@ -105,7 +105,7 @@ nav ul li a:hover {
 }
 
 #hero .hero-image {
-    max-width: 45%; /* Adjust width */
+    max-width: 30%; /* Adjust width */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Stronger shadow */

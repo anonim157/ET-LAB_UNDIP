@@ -21,7 +21,7 @@ body {
 header {
     background-color: #004d73; /* Dark Blue */
     color: #fff;
-    padding: 10px 0;
+    padding: 10px 0; /* Mengubah padding vertikal menjadi 10px untuk membuatnya lebih ringkas */
     box-shadow: 0 2px 8px rgba(0,0,0,0.25); /* Stronger shadow */
     position: sticky; /* Make header sticky */
     top: 0;
@@ -33,29 +33,30 @@ header .container {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 15px; /* Gap between header elements */
+    gap: 10px; /* Mengurangi gap antar elemen header */
 }
 
 header .logo {
-    height: 200px;
-    margin-right: 35px; /* Space to the right of the logo */
+    height: 50px; /* Mengurangi tinggi logo secara signifikan dari 200px menjadi 50px */
+    margin-right: 10px; /* Mengurangi margin kanan logo */
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8em;
+    font-size: 1.4em; /* Mengurangi ukuran font judul utama */
     flex-grow: 1; /* Allows h1 to take available space */
     white-space: nowrap; /* Prevent line break for H1 */
-    min-width: 200px; /* Ensure H1 has a minimum width before wrapping */
+    min-width: 150px; /* Menyesuaikan min-width agar tidak terlalu kecil */
 }
 
 header h2 {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 0.9em; /* Mengurangi ukuran font sub-judul */
     font-weight: 400;
     color: #bbdefb; /* Lighter blue for subtitle */
-    flex-basis: 100%; /* forces h2 to new line on smaller screens */
+    flex-basis: auto; /* Agar tidak selalu ke baris baru, biarkan flexbox yang mengatur */
     text-align: right;
+    width: auto; /* Reset width */
 }
 
 /* Navigation Styles */
@@ -71,16 +72,17 @@ nav ul {
     padding: 0;
     display: flex;
     flex-wrap: wrap; /* Allow menu items to wrap */
-    gap: 20px; /* Spacing between menu items */
+    gap: 15px; /* Mengurangi spacing between menu items */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    padding: 8px 0; /* More padding for click area */
+    padding: 5px 0; /* Mengurangi padding vertikal link navigasi */
     transition: color 0.3s ease, border-bottom 0.3s ease;
     white-space: nowrap; /* Prevent line break for nav items */
+    font-size: 0.9em; /* Mengurangi ukuran font navigasi */
 }
 
 nav ul li a:hover {
@@ -630,27 +632,37 @@ footer p {
     header .container {
         flex-direction: column;
         text-align: center;
+        gap: 8px; /* Mengurangi gap di tablet */
     }
 
     header .logo {
         margin-right: 0;
-        margin-bottom: 10px;
+        margin-bottom: 5px; /* Mengurangi margin bawah logo */
+        height: 40px; /* Mengecilkan logo di tablet */
     }
 
-    header h1,
+    header h1 {
+        font-size: 1.2em; /* Mengecilkan judul utama di tablet */
+        min-width: unset; /* Reset min-width */
+    }
     header h2 {
-        text-align: center;
-        width: auto;
-        flex-basis: auto; /* Reset flex-basis */
+        font-size: 0.8em; /* Mengecilkan sub-judul di tablet */
+        flex-basis: 100%; /* forces h2 to new line on tablets */
+        text-align: center; /* center align h2 on tablets */
     }
 
     nav {
         justify-content: center;
-        margin-top: 15px;
+        margin-top: 10px; /* Mengurangi margin atas nav */
     }
 
     nav ul {
-        gap: 15px; /* Adjust spacing */
+        gap: 10px; /* Mengurangi spacing antar item navigasi */
+    }
+
+    nav ul li a {
+        font-size: 0.85em; /* Mengecilkan font navigasi di tablet */
+        padding: 3px 0; /* Mengurangi padding vertikal link navigasi di tablet */
     }
 
     #hero .container {
@@ -775,18 +787,22 @@ footer p {
     }
 
     header h1 {
-        font-size: 1.5em;
+        font-size: 1.1em; /* Lebih kecil lagi untuk ponsel */
     }
     header h2 {
-        font-size: 1em;
+        font-size: 0.7em; /* Lebih kecil lagi untuk ponsel */
     }
     nav ul {
         flex-direction: column; /* Stack nav items even more */
         align-items: center;
-        gap: 10px;
+        gap: 8px; /* Mengurangi gap di ponsel */
     }
     nav ul li {
         margin-left: 0;
+    }
+    nav ul li a {
+        font-size: 0.8em; /* Lebih kecil lagi untuk ponsel */
+        padding: 2px 0; /* Mengurangi padding di ponsel */
     }
 
     #hero {
@@ -850,5 +866,5 @@ footer p {
     }
 
     /* Fine-tune connecting lines for very small screens if needed, 
-        but the tablet adjustments should largely suffice. */
+       but the tablet adjustments should largely suffice. */
 }

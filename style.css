@@ -6,9 +6,10 @@ body {
     box-sizing: border-box;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f7f6; /* Slightly off-white background */
+    background-color: #e0f2f7; /* Light blue-gray background */
 }
 
+/* Container for consistent content width */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -18,7 +19,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #004d40; /* Dark Teal */
+    background-color: #004d73; /* Dark Blue */
     color: #fff;
     padding: 10px 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.25); /* Stronger shadow */
@@ -36,8 +37,8 @@ header .container {
 }
 
 header .logo {
-    height: 40px; /* Diperkecil sesuai permintaan */
-    margin-right: 15px;
+    height: 70px;
+    margin-right: 40px; /* Space to the right of the logo */
 }
 
 header h1 {
@@ -45,20 +46,20 @@ header h1 {
     font-size: 1.8em;
     flex-grow: 1; /* Allows h1 to take available space */
     white-space: nowrap; /* Prevent line break for H1 */
+    min-width: 200px; /* Ensure H1 has a minimum width before wrapping */
 }
 
 header h2 {
     margin: 0;
     font-size: 1.2em;
     font-weight: 400;
-    color: #c8e6c9; /* Lighter green for subtitle */
+    color: #bbdefb; /* Lighter blue for subtitle */
     flex-basis: 100%; /* forces h2 to new line on smaller screens */
     text-align: right;
 }
 
 /* Navigation Styles */
 nav {
-    /* No margin-top needed here, flexbox gap will handle it */
     flex-grow: 1; /* Allow nav to take available space */
     display: flex;
     justify-content: flex-end; /* Align to the right */
@@ -83,13 +84,13 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #a7ffeb; /* Lighter teal on hover */
-    border-bottom: 2px solid #a7ffeb;
+    color: #90caf9; /* Lighter blue on hover */
+    border-bottom: 2px solid #90caf9;
 }
 
 /* Hero Section */
 #hero {
-    background-color: #e0f2f1; /* Light teal background */
+    background-color: #e3f2fd; /* Very light blue background */
     padding: 80px 0; /* More vertical padding */
     text-align: center;
     overflow: hidden; /* Clear any floating elements */
@@ -118,7 +119,7 @@ nav ul li a:hover {
 
 #hero .hero-text h3 {
     font-size: 2.5em; /* Larger heading */
-    color: #004d40;
+    color: #004d73; /* Dark Blue */
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -129,9 +130,10 @@ nav ul li a:hover {
     color: #555;
 }
 
+/* General Button Style */
 .button {
     display: inline-block;
-    background-color: #00796b; /* Medium teal */
+    background-color: #1976d2; /* Medium blue */
     color: #fff;
     padding: 15px 30px; /* Larger padding */
     border-radius: 8px; /* More rounded corners */
@@ -141,31 +143,55 @@ nav ul li a:hover {
 }
 
 .button:hover {
-    background-color: #004d40; /* Darker teal on hover */
+    background-color: #1565c0; /* Darker blue on hover */
     transform: translateY(-2px); /* Slight lift effect */
 }
 
 /* Section General Styles */
-.about-section, .program-section, .facility-section, .division-section, .organization-section, .gallery-section {
+.about-section,
+.program-section,
+.facility-section,
+.division-section,
+.organization-section,
+.gallery-section,
+.contact-detail-section { /* Added contact section */
     padding: 80px 0; /* Consistent vertical padding */
     background-color: #fff; /* White background for sections */
     border-bottom: 1px solid #e0e0e0; /* Subtle separator */
 }
 
-.about-section h2, .program-section h2, .facility-section h2, .division-section h2, .organization-section h2, .gallery-section h2 {
+/* Remove border from the last section */
+.contact-detail-section {
+    border-bottom: none;
+}
+
+
+.about-section h2,
+.program-section h2,
+.facility-section h2,
+.division-section h2,
+.organization-section h2,
+.gallery-section h2,
+.contact-detail-section h2 { /* Added contact section */
     text-align: center;
-    color: #004d40;
+    color: #004d73; /* Dark Blue */
     margin-bottom: 50px; /* More space below heading */
     font-size: 2.5em; /* Larger heading */
     position: relative;
 }
 
-.about-section h2::after, .program-section h2::after, .facility-section h2::after, .division-section h2::after, .organization-section h2::after, .gallery-section h2::after {
+.about-section h2::after,
+.program-section h2::after,
+.facility-section h2::after,
+.division-section h2::after,
+.organization-section h2::after,
+.gallery-section h2::after,
+.contact-detail-section h2::after { /* Added contact section */
     content: '';
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #00796b;
+    background-color: #1976d2; /* Medium blue */
     margin: 15px auto 0;
     border-radius: 2px;
 }
@@ -178,38 +204,78 @@ nav ul li a:hover {
     line-height: 1.7;
 }
 
-/* Program/Division Grid Styles */
-.program-grid, .facility-grid, .gallery-grid {
+/* Program/Division/Facility Grid Styles */
+.program-grid,
+.facility-grid,
+.gallery-grid,
+.contact-grid { /* Added contact grid */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-.program-item, .facility-item {
+.program-item,
+.facility-item,
+.contact-info-item { /* Added contact item */
     background-color: #fff;
     padding: 30px; /* More padding */
     border-radius: 10px; /* More rounded */
     box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Stronger shadow */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e0f2f1; /* Subtle border */
+    border: 1px solid #bbdefb; /* Light blue border */
 }
 
-.program-item:hover, .facility-item:hover {
+.program-item:hover,
+.facility-item:hover,
+.contact-info-item:hover { /* Added contact item */
     transform: translateY(-8px); /* More pronounced lift */
     box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Stronger shadow on hover */
 }
 
-.program-item h3, .facility-item h3 {
-    color: #00796b;
+.program-item h3,
+.facility-item h3,
+.contact-info-item h3 { /* Added contact item */
+    color: #1976d2; /* Medium blue */
     margin-top: 0;
     font-size: 1.4em;
     margin-bottom: 15px;
 }
 
-.program-item p {
+.program-item p,
+.contact-info-item p { /* Added contact item */
     font-size: 0.95em;
     color: #666;
+}
+
+/* Specific styling for PCB order section within program item */
+.program-item h4 {
+    color: #004d73; /* Dark Blue */
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.program-item ul {
+    list-style-type: disc; /* Use discs for unordered lists */
+    padding-left: 20px;
+    margin-bottom: 15px;
+    text-align: left; /* Align list items to left */
+    font-size: 0.9em;
+    color: #666;
+}
+
+.program-item ol {
+    list-style-type: decimal; /* Use numbers for ordered lists */
+    padding-left: 20px;
+    margin-bottom: 15px;
+    text-align: left; /* Align list items to left */
+    font-size: 0.9em;
+    color: #666;
+}
+
+.program-item li {
+    margin-bottom: 8px;
 }
 
 .facility-item img {
@@ -227,33 +293,45 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-    position: relative;
+    position: relative; /* For the lines to position correctly */
 }
 
-.org-chart .level-1, .org-chart .level-2, .org-chart .level-3-project-team, .org-chart .level-4, .org-chart .level-5, .org-chart .level-6 {
+.org-chart .level-1,
+.org-chart .level-2,
+.org-chart .level-3-project-team,
+.org-chart .level-4,
+.org-chart .level-5,
+.org-chart .level-6 {
     display: flex;
     justify-content: center;
     width: 100%;
     margin-bottom: 50px; /* More space between levels */
     position: relative; /* For connecting lines */
+    flex-wrap: wrap; /* Allow nodes to wrap on smaller screens */
 }
 
 .org-node {
     background-color: #fff;
-    border: 1px solid #d4e7e6; /* Lighter, more subtle border */
+    border: 1px solid #bbdefb; /* Lighter blue border */
     border-radius: 10px;
     padding: 20px 15px;
-    margin: 0 15px;
+    margin: 15px; /* Adjust margin for spacing between nodes */
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     position: relative;
     flex-shrink: 0;
-    min-width: 190px; /* Adjusted min-width for consistency */
+    min-width: 190px;
     max-width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+}
+
+.org-node:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Stronger shadow on hover */
 }
 
 .org-photo-circle {
@@ -262,7 +340,7 @@ nav ul li a:hover {
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 12px auto;
-    border: 3px solid #00796b; /* Thicker border */
+    border: 3px solid #1976d2; /* Thicker blue border */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -277,7 +355,7 @@ nav ul li a:hover {
 
 .org-title {
     font-weight: 700; /* Bolder title */
-    color: #004d40;
+    color: #004d73; /* Dark Blue */
     font-size: 1.15em;
     margin-bottom: 5px;
 }
@@ -295,241 +373,207 @@ nav ul li a:hover {
     font-size: 1.1em;
 }
 
-/* Connecting Lines (More robust approach for simple hierarchies) */
-/* This requires a bit of manual adjustment, but cleaner than before */
-/* Connect level 1 (Kepala) to level 2 (Managers) */
-.level-1::after {
+/* Connecting Lines */
+/* General line styles for all levels (to be overridden for specific connections) */
+.org-chart .level-1::after,
+.org-chart .level-2::before, .org-chart .level-2::after, .org-chart .level-2 > .org-node::before,
+.org-chart .level-3-project-team::before, .org-chart .level-3-project-team::after, .org-chart .level-3-project-team > .org-node::before,
+.org-chart .level-4::before, .org-chart .level-4::after, .org-chart .level-4 > .org-node::before,
+.org-chart .level-5::before, .org-chart .level-5::after, .org-chart .level-5 > .org-node::before,
+.org-chart .level-6::before, .org-chart .level-6::after, .org-chart .level-6 > .org-node::before {
     content: '';
     position: absolute;
-    bottom: -25px; /* Halfway between levels */
+    background-color: #90caf9; /* Lighter blue line */
+    z-index: -1;
+}
+
+/* Level 1 (Kepala) to Level 2 (Managers) */
+.level-1::after { /* Vertical line down from Kepala */
+    bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
     height: 25px;
-    background-color: #a7ffeb; /* Teal line */
-    z-index: -1;
 }
 
 .level-2 {
-    /* Horizontal line for managers */
-    position: relative;
     padding-top: 25px; /* Space for incoming line from above */
+    position: relative;
 }
 
-.level-2::before {
-    content: '';
-    position: absolute;
+.level-2::before { /* Vertical line up to horizontal line of managers */
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 200px); /* Adjust width to connect managers */
-    max-width: 400px; /* Limit horizontal line length */
-    height: 2px;
-    background-color: #a7ffeb;
-    z-index: -1;
-}
-
-.level-2 > .org-node::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 25px; /* Connects from horizontal line to node */
-    background-color: #a7ffeb;
-    z-index: -1;
-}
-
-/* Connect level 2 (Manager Project) to level 3 (Project Team) */
-.level-3-project-team {
-    position: relative;
-    padding-top: 25px; /* Space for incoming line from above */
-}
-
-.level-3-project-team::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%; /* Center under manager project */
     transform: translateX(-50%);
     width: 2px;
     height: 25px;
-    background-color: #a7ffeb;
-    z-index: -1;
 }
 
-/* Horizontal line connecting all level 3 nodes */
-.level-3-project-team::after {
-    content: '';
-    position: absolute;
-    top: 25px; /* Below the vertical line from manager */
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 100px); /* Adjust width as needed */
-    max-width: 800px; /* Limit horizontal line length */
+.level-2::after { /* Horizontal line connecting managers */
+    top: 25px; /* Position below the vertical line */
+    left: 0;
+    right: 0;
     height: 2px;
-    background-color: #a7ffeb;
-    z-index: -1;
+    margin: 0 auto;
+    width: calc(100% - 100px); /* Adjust width to connect managers */
+    max-width: 400px;
 }
 
-.level-3-project-team > .org-node::before {
-    content: '';
-    position: absolute;
-    top: 25px; /* Connects from horizontal line to node */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 25px; /* Vertical line down to node */
-    background-color: #a7ffeb;
-    z-index: -1;
-}
-/* Ensure the lines extend to the actual nodes */
-.level-3-project-team > .org-node {
+.level-2 > .org-node {
     margin-top: 25px; /* Push nodes down to make space for lines */
 }
 
-
-/* Connect level 3 (All Project Team Members) to level 4 (Supervisors) */
-.level-4 {
-    position: relative;
-    padding-top: 25px; /* Space for incoming line from above */
-}
-
-.level-4::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%; /* Needs to align with the center of the level 3 group */
-    transform: translateX(-50%);
-    width: 2px; /* A single vertical line from the center of level 3 */
-    height: 25px;
-    background-color: #a7ffeb;
-    z-index: -1;
-}
-
-.level-4::after { /* Horizontal line for supervisors */
-    content: '';
-    position: absolute;
-    top: 25px; /* Below the vertical line from above */
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 100px); /* Adjust width to connect supervisors */
-    max-width: 1000px;
-    height: 2px;
-    background-color: #a7ffeb;
-    z-index: -1;
-}
-
-.level-4 > .org-node::before {
-    content: '';
-    position: absolute;
-    top: 25px;
+.level-2 > .org-node::before { /* Vertical lines from horizontal line to each manager node */
+    top: 0; /* Position at the top of the node */
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
     height: 25px;
-    background-color: #a7ffeb;
-    z-index: -1;
+}
+
+/* Level 2 (Manager Project) to Level 3 (Project Team) */
+.level-3-project-team {
+    padding-top: 25px; /* Space for incoming line from above */
+    position: relative;
+}
+
+.level-3-project-team::before { /* Vertical line down from Manager Project */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 25px;
+}
+
+.level-3-project-team::after { /* Horizontal line connecting project team members */
+    top: 25px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    margin: 0 auto;
+    width: calc(100% - 100px); /* Adjust width */
+    max-width: 800px;
+}
+
+.level-3-project-team > .org-node {
+    margin-top: 25px;
+}
+
+.level-3-project-team > .org-node::before { /* Vertical lines from horizontal line to each project team node */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 25px;
+}
+
+/* Level 4 (Supervisors) */
+/* The same logic applies: vertical line from above, then horizontal, then vertical to nodes */
+.level-4 {
+    padding-top: 25px;
+    position: relative;
+}
+
+.level-4::before {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 25px;
+}
+
+.level-4::after {
+    top: 25px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    margin: 0 auto;
+    width: calc(100% - 100px);
+    max-width: 1000px;
 }
 
 .level-4 > .org-node {
     margin-top: 25px;
 }
 
-
-/* Connect level 4 (Supervisors) to level 5 (Anggota/Trainee) */
-.level-5 {
-    position: relative;
-    padding-top: 25px;
-}
-
-.level-5::before {
-    content: '';
-    position: absolute;
+.level-4 > .org-node::before {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
     height: 25px;
-    background-color: #a7ffeb;
-    z-index: -1;
 }
 
-.level-5::after { /* Horizontal line for level 5 */
-    content: '';
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 100px); /* Adjust width */
-    max-width: 800px;
-    height: 2px;
-    background-color: #a7ffeb;
-    z-index: -1;
+/* Level 5 (Anggota Mechanic/Electric/Etching) */
+.level-5 {
+    padding-top: 25px;
+    position: relative;
 }
 
-.level-5 > .org-node::before {
-    content: '';
-    position: absolute;
-    top: 25px;
+.level-5::before {
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
     height: 25px;
-    background-color: #a7ffeb;
-    z-index: -1;
+}
+
+.level-5::after {
+    top: 25px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    margin: 0 auto;
+    width: calc(100% - 100px);
+    max-width: 800px;
 }
 
 .level-5 > .org-node {
     margin-top: 25px;
 }
 
-/* Connect level 5 (Anggota/Trainee) to level 6 (Trainee) */
-.level-6 {
-    position: relative;
-    padding-top: 25px;
-}
-
-.level-6::before {
-    content: '';
-    position: absolute;
+.level-5 > .org-node::before {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
     height: 25px;
-    background-color: #a7ffeb;
-    z-index: -1;
 }
 
-.level-6::after { /* Horizontal line for level 6 */
-    content: '';
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 100px); /* Adjust width */
-    max-width: 800px;
-    height: 2px;
-    background-color: #a7ffeb;
-    z-index: -1;
+/* Level 6 (Trainee) */
+.level-6 {
+    padding-top: 25px;
+    position: relative;
 }
 
-.level-6 > .org-node::before {
-    content: '';
-    position: absolute;
-    top: 25px;
+.level-6::before {
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
     height: 25px;
-    background-color: #a7ffeb;
-    z-index: -1;
+}
+
+.level-6::after {
+    top: 25px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    margin: 0 auto;
+    width: calc(100% - 100px);
+    max-width: 800px;
 }
 
 .level-6 > .org-node {
     margin-top: 25px;
+}
+
+.level-6 > .org-node::before {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 25px;
 }
 
 
@@ -548,10 +592,26 @@ nav ul li a:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+/* Contact Section Specific Styles */
+.contact-info-item {
+    text-align: left; /* Align text left for readability in contact section */
+}
+
+.contact-info-item a {
+    color: #1976d2; /* Link color for contact info */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info-item a:hover {
+    color: #1565c0;
+    text-decoration: underline;
+}
+
 /* Footer Styles */
 footer {
-    background-color: #004d40;
-    color: #e0f2f1; /* Lighter text color */
+    background-color: #004d73; /* Dark Blue */
+    color: #e3f2fd; /* Lighter text color */
     text-align: center;
     padding: 40px 0; /* More padding */
     font-size: 0.95em;
@@ -563,6 +623,10 @@ footer p {
 
 /* Responsive Adjustments */
 @media (max-width: 992px) { /* Tablet and smaller */
+    .container {
+        width: 95%; /* Use more width on smaller screens */
+    }
+
     header .container {
         flex-direction: column;
         text-align: center;
@@ -573,7 +637,8 @@ footer p {
         margin-bottom: 10px;
     }
 
-    header h1, header h2 {
+    header h1,
+    header h2 {
         text-align: center;
         width: auto;
         flex-basis: auto; /* Reset flex-basis */
@@ -593,7 +658,8 @@ footer p {
         gap: 30px;
     }
 
-    #hero .hero-image, #hero .hero-text {
+    #hero .hero-image,
+    #hero .hero-text {
         max-width: 90%; /* Take more width on smaller screens */
     }
 
@@ -601,100 +667,113 @@ footer p {
         text-align: center;
     }
 
-    .about-section h2, .program-section h2, .facility-section h2, .division-section h2, .organization-section h2, .gallery-section h2 {
+    #hero .hero-text h3 {
+        font-size: 2em; /* Slightly smaller for tablets */
+    }
+
+    #hero .hero-text p {
+        font-size: 1.05em;
+    }
+
+    .about-section h2,
+    .program-section h2,
+    .facility-section h2,
+    .division-section h2,
+    .organization-section h2,
+    .gallery-section h2,
+    .contact-detail-section h2 {
         font-size: 2.2em;
         margin-bottom: 30px;
     }
 
-    .program-grid, .facility-grid, .gallery-grid {
+    .program-grid,
+    .facility-grid,
+    .gallery-grid,
+    .contact-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min-width */
     }
 
-    .org-chart .level-1, .org-chart .level-2, .org-chart .level-3-project-team, .org-chart .level-4, .org-chart .level-5, .org-chart .level-6 {
+    /* Organization Chart for smaller screens (vertical stacking) */
+    .org-chart .level-1,
+    .org-chart .level-2,
+    .org-chart .level-3-project-team,
+    .org-chart .level-4,
+    .org-chart .level-5,
+    .org-chart .level-6 {
         flex-direction: column; /* Stack nodes vertically */
         align-items: center;
-        margin-bottom: 40px;
+        margin-bottom: 30px; /* Adjust space between levels */
     }
 
     .org-node {
-        margin-bottom: 25px; /* Space between stacked nodes */
+        margin: 15px 0; /* Adjust margin for stacked nodes */
         width: 90%; /* Adjust width */
         min-width: unset;
         max-width: 300px; /* Limit max-width for stacked nodes */
     }
 
-    /* Adjust connecting lines for vertical stacking - this is crucial and complex */
+    /* Adjust connecting lines for vertical stacking */
+    /* Reset horizontal lines and make vertical lines longer as needed */
     .level-1::after,
-    .level-2::before, .level-2 > .org-node::before,
-    .level-3-project-team::before, .level-3-project-team::after, .level-3-project-team > .org-node::before,
-    .level-4::before, .level-4::after, .level-4 > .org-node::before,
-    .level-5::before, .level-5::after, .level-5 > .org-node::before,
-    .level-6::before, .level-6::after, .level-6 > .org-node::before {
+    .level-2::before,
+    .level-3-project-team::before,
+    .level-4::before,
+    .level-5::before,
+    .level-6::before {
         left: 50%;
         transform: translateX(-50%);
-        width: 2px; /* Make all connecting lines vertical */
-        height: 25px; /* Standard vertical segment length */
+        width: 2px; /* Keep vertical lines */
+        height: 25px; /* Standard segment length */
     }
 
-    .level-2::before {
-        top: 0;
-        height: 25px; /* Connects from level 1 */
-    }
-
-    .level-2::after { /* Remove horizontal line for stacked managers */
-        content: none;
-    }
-
-    .level-3-project-team::before {
-        top: 0;
-        height: 25px;
-    }
-    .level-3-project-team::after { /* Remove horizontal line for stacked team */
-        content: none;
-    }
-    .level-3-project-team > .org-node {
-        margin-top: 0; /* Reset margin from desktop style */
-        padding-top: 25px; /* Add padding to make space for line */
-    }
-
-    .level-4::before {
-        top: 0;
-        height: 25px;
-    }
-    .level-4::after {
-        content: none;
-    }
-     .level-4 > .org-node {
-        margin-top: 0;
-        padding-top: 25px;
-    }
-
-    .level-5::before {
-        top: 0;
-        height: 25px;
-    }
-    .level-5::after {
-        content: none;
-    }
-     .level-5 > .org-node {
-        margin-top: 0;
-        padding-top: 25px;
-    }
-
-    .level-6::before {
-        top: 0;
-        height: 25px;
-    }
+    .level-2::after,
+    .level-3-project-team::after,
+    .level-4::after,
+    .level-5::after,
     .level-6::after {
-        content: none;
+        content: none; /* Remove horizontal lines */
     }
-     .level-6 > .org-node {
-        margin-top: 0;
-        padding-top: 25px;
+
+    /* Adjust positioning of nodes relative to lines for vertical stacking */
+    .level-2 > .org-node,
+    .level-3-project-team > .org-node,
+    .level-4 > .org-node,
+    .level-5 > .org-node,
+    .level-6 > .org-node {
+        margin-top: 0; /* Reset desktop margin-top */
+        padding-top: 25px; /* Add padding to make space for incoming line */
+    }
+
+    .level-2 > .org-node::before,
+    .level-3-project-team > .org-node::before,
+    .level-4 > .org-node::before,
+    .level-5 > .org-node::before,
+    .level-6 > .org-node::before {
+        content: none; /* Remove vertical lines *within* the same level when stacked */
+    }
+
+    /* Ensure specific lines connect to the next level when stacked */
+    .level-2 .org-node:last-child::after, /* Line from last manager to project team level */
+    .level-3-project-team .org-node:last-child::after, /* Line from last project team to supervisor level */
+    .level-4 .org-node:last-child::after, /* Line from last supervisor to Anggota level */
+    .level-5 .org-node:last-child::after /* Line from last Anggota to Trainee level */ {
+        content: '';
+        position: absolute;
+        bottom: -25px; /* Halfway to next level */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 25px;
+        background-color: #90caf9; /* Lighter blue line */
+        z-index: -1;
     }
 }
 
 @media (max-width: 576px) { /* Smaller phones */
+    .container {
+        width: 95%; /* Ensure enough padding on very small screens */
+    }
+
     header h1 {
         font-size: 1.5em;
     }
@@ -710,22 +789,51 @@ footer p {
         margin-left: 0;
     }
 
+    #hero {
+        padding: 60px 0; /* Reduce padding for smaller screens */
+    }
+
+    #hero .hero-image,
+    #hero .hero-text {
+        max-width: 100%; /* Full width for image and text on small phones */
+    }
+
     #hero .hero-text h3 {
         font-size: 1.5em;
     }
 
     .button {
-        padding: 10px 20px;
+        padding: 12px 25px; /* Slightly smaller button */
         font-size: 0.9em;
     }
 
-    .about-section h2, .program-section h2, .facility-section h2, .division-section h2, .organization-section h2, .gallery-section h2 {
+    .about-section h2,
+    .program-section h2,
+    .facility-section h2,
+    .division-section h2,
+    .organization-section h2,
+    .gallery-section h2,
+    .contact-detail-section h2 {
         font-size: 1.8em;
+    }
+
+    .program-grid,
+    .facility-grid,
+    .gallery-grid,
+    .contact-grid {
+        grid-template-columns: 1fr; /* Single column layout for very small screens */
+    }
+
+    .program-item,
+    .facility-item,
+    .contact-info-item {
+        padding: 20px; /* Reduce padding */
     }
 
     .org-node {
         padding: 15px 10px;
         min-width: 150px;
+        max-width: 95%; /* Allow it to take more width */
     }
 
     .org-photo-circle {
@@ -740,4 +848,7 @@ footer p {
     .org-subtitle {
         font-size: 0.8em;
     }
+
+    /* Fine-tune connecting lines for very small screens if needed, 
+        but the tablet adjustments should largely suffice. */
 }

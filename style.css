@@ -3,9 +3,10 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f7f6;
+    background-color: #f4f7f6; /* Slightly off-white background */
 }
 
 .container {
@@ -17,290 +18,255 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #0056b3; /* Darker blue for header */
+    background-color: #004d40; /* Dark Teal */
     color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25); /* Stronger shadow */
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 15px; /* Gap between header elements */
 }
 
 header .logo {
-    max-width: 100px;
-    height: auto;
-    margin-bottom: 10px;
+    height: 40px; /* Diperkecil sesuai permintaan */
+    margin-right: 15px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
-    color: #fff;
+    font-size: 1.8em;
+    flex-grow: 1; /* Allows h1 to take available space */
+    white-space: nowrap; /* Prevent line break for H1 */
 }
 
 header h2 {
-    margin: 5px 0 15px;
-    font-size: 1.2em;
-    color: #f0f0f0;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
     margin: 0;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #c8e6c9; /* Lighter green for subtitle */
+    flex-basis: 100%; /* forces h2 to new line on smaller screens */
+    text-align: right;
+}
+
+/* Navigation Styles */
+nav {
+    /* No margin-top needed here, flexbox gap will handle it */
+    flex-grow: 1; /* Allow nav to take available space */
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allow navigation items to wrap on smaller screens */
+    justify-content: flex-end; /* Align to the right */
 }
 
-header nav ul li {
-    margin: 0 15px;
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow menu items to wrap */
+    gap: 20px; /* Spacing between menu items */
 }
 
-header nav ul li a {
+nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    padding: 8px 0; /* More padding for click area */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    white-space: nowrap; /* Prevent line break for nav items */
 }
 
-header nav ul li a:hover {
-    background-color: #004494; /* Slightly darker on hover */
+nav ul li a:hover {
+    color: #a7ffeb; /* Lighter teal on hover */
+    border-bottom: 2px solid #a7ffeb;
 }
 
 /* Hero Section */
 #hero {
-    background-color: #e0f2f7; /* Light blue background */
-    padding: 80px 0;
+    background-color: #e0f2f1; /* Light teal background */
+    padding: 80px 0; /* More vertical padding */
     text-align: center;
-    position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Clear any floating elements */
 }
 
 #hero .container {
     display: flex;
+    flex-direction: row; /* Default to row */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 40px; /* Space between image and text */
-    flex-wrap: wrap; /* Allow wrapping */
 }
 
 #hero .hero-image {
-    max-width: 50%;
+    max-width: 45%; /* Adjust width */
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Stronger shadow */
+    object-fit: cover;
 }
 
 #hero .hero-text {
-    flex: 1; /* Take remaining space */
+    max-width: 50%; /* Adjust width */
     text-align: left;
 }
 
-#hero h3 {
-    font-size: 2.2em;
-    color: #0056b3;
+#hero .hero-text h3 {
+    font-size: 2.5em; /* Larger heading */
+    color: #004d40;
     margin-bottom: 20px;
+    line-height: 1.2;
 }
 
-#hero p {
-    font-size: 1.1em;
-    color: #555;
+#hero .hero-text p {
+    font-size: 1.15em; /* Slightly larger text */
     margin-bottom: 30px;
+    color: #555;
 }
 
 .button {
     display: inline-block;
-    background-color: #007bff; /* Bright blue button */
+    background-color: #00796b; /* Medium teal */
     color: #fff;
-    padding: 12px 25px;
+    padding: 15px 30px; /* Larger padding */
+    border-radius: 8px; /* More rounded corners */
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    font-weight: 700; /* Bolder text */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #004d40; /* Darker teal on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
-/* General Section Styling */
-section {
-    padding: 60px 0;
+/* Section General Styles */
+.about-section, .program-section, .facility-section, .division-section, .organization-section, .gallery-section {
+    padding: 80px 0; /* Consistent vertical padding */
+    background-color: #fff; /* White background for sections */
+    border-bottom: 1px solid #e0e0e0; /* Subtle separator */
+}
+
+.about-section h2, .program-section h2, .facility-section h2, .division-section h2, .organization-section h2, .gallery-section h2 {
     text-align: center;
-}
-
-section:nth-of-type(even) { /* Apply different background to alternate sections */
-    background-color: #f9f9f9;
-}
-
-h2 {
-    font-size: 2.2em;
-    color: #0056b3;
-    margin-bottom: 40px;
+    color: #004d40;
+    margin-bottom: 50px; /* More space below heading */
+    font-size: 2.5em; /* Larger heading */
     position: relative;
-    display: inline-block;
 }
 
-h2::after {
+.about-section h2::after, .program-section h2::after, .facility-section h2::after, .division-section h2::after, .organization-section h2::after, .gallery-section h2::after {
     content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -10px;
+    display: block;
     width: 60px;
-    height: 3px;
-    background-color: #007bff;
+    height: 4px;
+    background-color: #00796b;
+    margin: 15px auto 0;
     border-radius: 2px;
 }
 
-
-/* About Section */
 .about-section p {
-    max-width: 800px;
+    text-align: justify;
+    max-width: 900px;
     margin: 0 auto 20px auto;
-    font-size: 1.1em;
-    color: #444;
+    font-size: 1.05em;
+    line-height: 1.7;
 }
 
-/* Program & Division Grid */
-.program-grid, .facility-grid {
+/* Program/Division Grid Styles */
+.program-grid, .facility-grid, .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    margin-top: 40px;
 }
 
 .program-item, .facility-item {
     background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: left;
+    padding: 30px; /* More padding */
+    border-radius: 10px; /* More rounded */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Stronger shadow */
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0f2f1; /* Subtle border */
 }
 
 .program-item:hover, .facility-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transform: translateY(-8px); /* More pronounced lift */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Stronger shadow on hover */
 }
 
 .program-item h3, .facility-item h3 {
-    color: #007bff;
-    font-size: 1.4em;
+    color: #00796b;
     margin-top: 0;
+    font-size: 1.4em;
     margin-bottom: 15px;
 }
 
-.program-item p, .facility-item p {
-    font-size: 1em;
+.program-item p {
+    font-size: 0.95em;
     color: #666;
 }
 
 .facility-item img {
     max-width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Crop image to fit */
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-/* Gallery Section */
-.gallery-section {
-    background-color: #eaf6f4;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.gallery-grid img {
-    width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 0.9em;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-/* --- START UPDATED STYLES for Organizational Chart --- */
-
-.organization-section {
-    padding: 60px 20px; /* Add side padding for smaller screens */
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
+/* Organization Chart Styles */
 .org-chart {
-    display: flex; /* Use flexbox for primary layout */
-    flex-direction: column; /* Stack levels vertically */
-    align-items: center; /* Center levels horizontally */
-    gap: 40px; /* Space between levels */
-    padding: 40px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    position: relative; /* For positioning connecting lines */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
 }
 
-.org-chart > div[class^="level-"] {
+.org-chart .level-1, .org-chart .level-2, .org-chart .level-3-project-team, .org-chart .level-4, .org-chart .level-5, .org-chart .level-6 {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align items to the top if their heights differ */
-    gap: 30px; /* Space between nodes within a level */
-    position: relative;
-    width: 100%; /* Ensure levels span the container */
-    flex-wrap: wrap; /* Allow nodes to wrap on smaller screens */
+    width: 100%;
+    margin-bottom: 50px; /* More space between levels */
+    position: relative; /* For connecting lines */
 }
 
-/* Node Styling */
 .org-node {
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
+    border: 1px solid #d4e7e6; /* Lighter, more subtle border */
+    border-radius: 10px;
+    padding: 20px 15px;
+    margin: 0 15px;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease-in-out;
-    width: 200px; /* Fixed width for consistency */
-    flex-shrink: 0; /* Prevent shrinking below preferred width */
-}
-
-.org-node:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: relative;
+    flex-shrink: 0;
+    min-width: 190px; /* Adjusted min-width for consistency */
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .org-photo-circle {
-    width: 90px;
+    width: 90px; /* Larger photo circle */
     height: 90px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto 10px;
-    border: 2px solid #0056b3;
+    margin: 0 auto 12px auto;
+    border: 3px solid #00796b; /* Thicker border */
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .org-photo-circle img {
@@ -310,251 +276,468 @@ footer p {
 }
 
 .org-title {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #333;
+    font-weight: 700; /* Bolder title */
+    color: #004d40;
+    font-size: 1.15em;
     margin-bottom: 5px;
-    line-height: 1.3;
 }
 
 .org-subtitle {
     font-size: 0.9em;
     color: #666;
+    font-weight: 500;
 }
 
-/* Connecting Lines */
+.org-chart-description {
+    text-align: center;
+    margin-top: 40px;
+    color: #666;
+    font-size: 1.1em;
+}
 
-/* Vertical line from Kepala Laboratorium to Managers */
+/* Connecting Lines (More robust approach for simple hierarchies) */
+/* This requires a bit of manual adjustment, but cleaner than before */
+/* Connect level 1 (Kepala) to level 2 (Managers) */
 .level-1::after {
     content: '';
     position: absolute;
-    bottom: -40px; /* Position at the bottom of level 1, pointing down */
+    bottom: -25px; /* Halfway between levels */
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    height: 40px; /* Length of the vertical line */
-    background-color: #ccc;
-    z-index: 1; /* Ensure it's above the org-chart background but behind nodes */
+    height: 25px;
+    background-color: #a7ffeb; /* Teal line */
+    z-index: -1;
 }
 
-/* Vertical lines from Managers to Specialists */
-.level-2::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; /* Position at the bottom of level 2, pointing down */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 40px; /* Length of the vertical line */
-    background-color: #ccc;
-    z-index: 1;
-}
-
-/* Vertical lines from Specialists to Supervisors */
-.level-3::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; /* Position at the bottom of level 3, pointing down */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 40px; /* Length of the vertical line */
-    background-color: #ccc;
-    z-index: 1;
-}
-
-/* Horizontal lines connecting nodes on the same level (e.g., between Managers) */
-/* This is a bit tricky with pure CSS pseudo-elements for all levels if not careful.
-   A simpler approach for horizontal lines between siblings for this specific layout:
-   Each .org-node will have vertical lines from its top center to the horizontal line above it.
-   Then, the horizontal line itself connects all nodes in a sub-group.
-   Given the image, the connection is mainly from one parent node to a group of children.
-*/
-
-/* Adjustments for horizontal lines at level 2 (Managers) */
 .level-2 {
-    position: relative; /* Needed for absolute positioning of child connectors */
-}
-.level-2 .org-node::before {
-    content: '';
-    position: absolute;
-    top: -20px; /* From node top to the horizontal line above it */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 20px;
-    background-color: #ccc;
-    z-index: 1;
-}
-.level-2::before { /* Horizontal line above Managers */
-    content: '';
-    position: absolute;
-    top: -20px; /* Align with the vertical lines from nodes */
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(2 * 200px + 30px); /* (number of nodes * node width) + (number of gaps * gap width) */
-    height: 2px;
-    background-color: #ccc;
-    z-index: 0; /* Behind the vertical lines */
-}
-
-/* Adjustments for horizontal lines at level 3 (Specialists) */
-.level-3 {
+    /* Horizontal line for managers */
     position: relative;
+    padding-top: 25px; /* Space for incoming line from above */
 }
-.level-3 .org-node::before {
+
+.level-2::before {
     content: '';
     position: absolute;
-    top: -20px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 200px); /* Adjust width to connect managers */
+    max-width: 400px; /* Limit horizontal line length */
+    height: 2px;
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+
+.level-2 > .org-node::before {
+    content: '';
+    position: absolute;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    height: 20px;
-    background-color: #ccc;
-    z-index: 1;
-}
-.level-3::before { /* Horizontal line above Specialists */
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(2 * 200px + 30px); /* Same calculation as Managers for simplicity, adjust if more nodes */
-    height: 2px;
-    background-color: #ccc;
-    z-index: 0;
+    height: 25px; /* Connects from horizontal line to node */
+    background-color: #a7ffeb;
+    z-index: -1;
 }
 
-/* Adjustments for horizontal lines at level 4 (Supervisors) */
+/* Connect level 2 (Manager Project) to level 3 (Project Team) */
+.level-3-project-team {
+    position: relative;
+    padding-top: 25px; /* Space for incoming line from above */
+}
+
+.level-3-project-team::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%; /* Center under manager project */
+    transform: translateX(-50%);
+    width: 2px;
+    height: 25px;
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+
+/* Horizontal line connecting all level 3 nodes */
+.level-3-project-team::after {
+    content: '';
+    position: absolute;
+    top: 25px; /* Below the vertical line from manager */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 100px); /* Adjust width as needed */
+    max-width: 800px; /* Limit horizontal line length */
+    height: 2px;
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+
+.level-3-project-team > .org-node::before {
+    content: '';
+    position: absolute;
+    top: 25px; /* Connects from horizontal line to node */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 25px; /* Vertical line down to node */
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+/* Ensure the lines extend to the actual nodes */
+.level-3-project-team > .org-node {
+    margin-top: 25px; /* Push nodes down to make space for lines */
+}
+
+
+/* Connect level 3 (All Project Team Members) to level 4 (Supervisors) */
 .level-4 {
     position: relative;
+    padding-top: 25px; /* Space for incoming line from above */
 }
-.level-4 .org-node::before {
+
+.level-4::before {
     content: '';
     position: absolute;
-    top: -20px;
+    top: 0;
+    left: 50%; /* Needs to align with the center of the level 3 group */
+    transform: translateX(-50%);
+    width: 2px; /* A single vertical line from the center of level 3 */
+    height: 25px;
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+
+.level-4::after { /* Horizontal line for supervisors */
+    content: '';
+    position: absolute;
+    top: 25px; /* Below the vertical line from above */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 100px); /* Adjust width to connect supervisors */
+    max-width: 1000px;
+    height: 2px;
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+
+.level-4 > .org-node::before {
+    content: '';
+    position: absolute;
+    top: 25px;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    height: 20px;
-    background-color: #ccc;
-    z-index: 1;
+    height: 25px;
+    background-color: #a7ffeb;
+    z-index: -1;
 }
-.level-4::before { /* Horizontal line above Supervisors */
+
+.level-4 > .org-node {
+    margin-top: 25px;
+}
+
+
+/* Connect level 4 (Supervisors) to level 5 (Anggota/Trainee) */
+.level-5 {
+    position: relative;
+    padding-top: 25px;
+}
+
+.level-5::before {
     content: '';
     position: absolute;
-    top: -20px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(4 * 200px + 3 * 30px); /* (4 nodes * 200px width) + (3 gaps * 30px gap) */
+    width: 2px;
+    height: 25px;
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+
+.level-5::after { /* Horizontal line for level 5 */
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 100px); /* Adjust width */
+    max-width: 800px;
     height: 2px;
-    background-color: #ccc;
-    z-index: 0;
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+
+.level-5 > .org-node::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 25px;
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+
+.level-5 > .org-node {
+    margin-top: 25px;
+}
+
+/* Connect level 5 (Anggota/Trainee) to level 6 (Trainee) */
+.level-6 {
+    position: relative;
+    padding-top: 25px;
+}
+
+.level-6::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 25px;
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+
+.level-6::after { /* Horizontal line for level 6 */
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 100px); /* Adjust width */
+    max-width: 800px;
+    height: 2px;
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+
+.level-6 > .org-node::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 25px;
+    background-color: #a7ffeb;
+    z-index: -1;
+}
+
+.level-6 > .org-node {
+    margin-top: 25px;
 }
 
 
-.org-chart-description {
-    text-align: left;
-    margin-top: 60px; /* More space from chart */
-    max-width: 900px; /* Wider content */
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #eaf0f2; /* Light background for description */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+/* Gallery Styles */
+.gallery-grid img {
+    width: 100%;
+    height: 280px; /* Slightly taller images */
+    object-fit: cover;
+    border-radius: 10px; /* More rounded */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12); /* Stronger shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.org-chart-description ul {
-    list-style: disc inside;
-    text-align: left;
-    padding-left: 20px;
-    margin-top: 15px;
+.gallery-grid img:hover {
+    transform: scale(1.05); /* More pronounced zoom */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.org-chart-description li {
-    margin-bottom: 8px;
-    text-align: left;
-    display: list-item;
-    float: none;
+/* Footer Styles */
+footer {
+    background-color: #004d40;
+    color: #e0f2f1; /* Lighter text color */
+    text-align: center;
+    padding: 40px 0; /* More padding */
+    font-size: 0.95em;
+}
+
+footer p {
+    margin: 8px 0;
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    header h2 {
-        font-size: 1em;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header nav ul li {
-        margin: 5px 0;
-    }
-
-    #hero .container {
+@media (max-width: 992px) { /* Tablet and smaller */
+    header .container {
         flex-direction: column;
         text-align: center;
     }
 
-    #hero .hero-image {
-        max-width: 80%;
-        margin-bottom: 30px;
+    header .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    header h1, header h2 {
+        text-align: center;
+        width: auto;
+        flex-basis: auto; /* Reset flex-basis */
+    }
+
+    nav {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    nav ul {
+        gap: 15px; /* Adjust spacing */
+    }
+
+    #hero .container {
+        flex-direction: column; /* Stack image and text */
+        gap: 30px;
+    }
+
+    #hero .hero-image, #hero .hero-text {
+        max-width: 90%; /* Take more width on smaller screens */
     }
 
     #hero .hero-text {
         text-align: center;
     }
 
-    h2 {
-        font-size: 1.8em;
+    .about-section h2, .program-section h2, .facility-section h2, .division-section h2, .organization-section h2, .gallery-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
     }
 
     .program-grid, .facility-grid, .gallery-grid {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min-width */
     }
 
-    /* Organizational chart responsive adjustments */
-    .org-chart {
-        padding: 20px;
-        gap: 20px; /* Reduce gap between levels on mobile */
-    }
-
-    .org-chart > div[class^="level-"] {
-        flex-direction: column; /* Stack nodes vertically within each level */
+    .org-chart .level-1, .org-chart .level-2, .org-chart .level-3-project-team, .org-chart .level-4, .org-chart .level-5, .org-chart .level-6 {
+        flex-direction: column; /* Stack nodes vertically */
         align-items: center;
-        gap: 20px; /* Gap between stacked nodes */
+        margin-bottom: 40px;
     }
 
     .org-node {
-        width: 90%; /* Make nodes take more width */
-        max-width: 300px; /* Limit max width */
+        margin-bottom: 25px; /* Space between stacked nodes */
+        width: 90%; /* Adjust width */
+        min-width: unset;
+        max-width: 300px; /* Limit max-width for stacked nodes */
     }
 
-    /* Hide horizontal connecting lines on mobile for stacked layout */
-    .level-2::before,
-    .level-3::before,
-    .level-4::before {
-        display: none;
-    }
-
-    /* Adjust vertical lines for stacked layout */
+    /* Adjust connecting lines for vertical stacking - this is crucial and complex */
     .level-1::after,
-    .level-2::after,
-    .level-3::after {
-        left: 50%; /* Keep centered */
+    .level-2::before, .level-2 > .org-node::before,
+    .level-3-project-team::before, .level-3-project-team::after, .level-3-project-team > .org-node::before,
+    .level-4::before, .level-4::after, .level-4 > .org-node::before,
+    .level-5::before, .level-5::after, .level-5 > .org-node::before,
+    .level-6::before, .level-6::after, .level-6 > .org-node::before {
+        left: 50%;
         transform: translateX(-50%);
-        height: 20px; /* Shorter vertical line */
-        bottom: -20px; /* Position correctly */
+        width: 2px; /* Make all connecting lines vertical */
+        height: 25px; /* Standard vertical segment length */
     }
 
-    .org-node::before { /* Adjust vertical lines coming from nodes */
-        display: none; /* Hide internal vertical lines from nodes to horizontal connector (no horizontal connector on mobile) */
+    .level-2::before {
+        top: 0;
+        height: 25px; /* Connects from level 1 */
+    }
+
+    .level-2::after { /* Remove horizontal line for stacked managers */
+        content: none;
+    }
+
+    .level-3-project-team::before {
+        top: 0;
+        height: 25px;
+    }
+    .level-3-project-team::after { /* Remove horizontal line for stacked team */
+        content: none;
+    }
+    .level-3-project-team > .org-node {
+        margin-top: 0; /* Reset margin from desktop style */
+        padding-top: 25px; /* Add padding to make space for line */
+    }
+
+    .level-4::before {
+        top: 0;
+        height: 25px;
+    }
+    .level-4::after {
+        content: none;
+    }
+     .level-4 > .org-node {
+        margin-top: 0;
+        padding-top: 25px;
+    }
+
+    .level-5::before {
+        top: 0;
+        height: 25px;
+    }
+    .level-5::after {
+        content: none;
+    }
+     .level-5 > .org-node {
+        margin-top: 0;
+        padding-top: 25px;
+    }
+
+    .level-6::before {
+        top: 0;
+        height: 25px;
+    }
+    .level-6::after {
+        content: none;
+    }
+     .level-6 > .org-node {
+        margin-top: 0;
+        padding-top: 25px;
+    }
+}
+
+@media (max-width: 576px) { /* Smaller phones */
+    header h1 {
+        font-size: 1.5em;
+    }
+    header h2 {
+        font-size: 1em;
+    }
+    nav ul {
+        flex-direction: column; /* Stack nav items even more */
+        align-items: center;
+        gap: 10px;
+    }
+    nav ul li {
+        margin-left: 0;
+    }
+
+    #hero .hero-text h3 {
+        font-size: 1.5em;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .about-section h2, .program-section h2, .facility-section h2, .division-section h2, .organization-section h2, .gallery-section h2 {
+        font-size: 1.8em;
+    }
+
+    .org-node {
+        padding: 15px 10px;
+        min-width: 150px;
+    }
+
+    .org-photo-circle {
+        width: 70px;
+        height: 70px;
+    }
+
+    .org-title {
+        font-size: 1em;
+    }
+
+    .org-subtitle {
+        font-size: 0.8em;
     }
 }

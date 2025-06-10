@@ -37,8 +37,8 @@ header .container {
 }
 
 header .logo {
-    height: 70px;
-    margin-right: 40px; /* Space to the right of the logo */
+    height: 200px;
+    margin-right: 20px; /* Space to the right of the logo */
 }
 
 header h1 {

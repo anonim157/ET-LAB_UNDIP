@@ -1,4 +1,6 @@
-/* General Body Styles */
+/* ===================================== */
+/* General Body & Layout Styles          */
+/* ===================================== */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -9,7 +11,6 @@ body {
     background-color: #e0f2f7; /* Light blue-gray background */
 }
 
-/* Container for consistent content width */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -17,7 +18,9 @@ body {
     padding: 20px 0;
 }
 
-/* Header Styles */
+/* ===================================== */
+/* Header Styles                         */
+/* ===================================== */
 header {
     background-color: #004d73; /* Dark Blue */
     color: #fff;
@@ -59,7 +62,9 @@ header h2 {
     width: auto; /* Reset width */
 }
 
-/* Navigation Styles */
+/* ===================================== */
+/* Navigation Styles                     */
+/* ===================================== */
 nav {
     flex-grow: 1; /* Allow nav to take available space */
     display: flex;
@@ -90,7 +95,9 @@ nav ul li a:hover {
     border-bottom: 2px solid #90caf9;
 }
 
-/* Hero Section */
+/* ===================================== */
+/* Hero Section                          */
+/* ===================================== */
 #hero {
     background-color: #e3f2fd; /* Very light blue background */
     padding: 80px 0; /* More vertical padding */
@@ -107,7 +114,7 @@ nav ul li a:hover {
 }
 
 #hero .hero-image {
-    max-width: 30%; /* Adjust width */
+    max-width: 30%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Stronger shadow */
@@ -115,7 +122,7 @@ nav ul li a:hover {
 }
 
 #hero .hero-text {
-    max-width: 50%; /* Adjust width */
+    max-width: 50%;
     text-align: left;
 }
 
@@ -132,7 +139,9 @@ nav ul li a:hover {
     color: #555;
 }
 
-/* General Button Style */
+/* ===================================== */
+/* General Button Style                  */
+/* ===================================== */
 .button {
     display: inline-block;
     background-color: #1976d2; /* Medium blue */
@@ -149,24 +158,25 @@ nav ul li a:hover {
     transform: translateY(-2px); /* Slight lift effect */
 }
 
-/* Section General Styles */
+/* ===================================== */
+/* Section General Styles                */
+/* ===================================== */
 .about-section,
 .program-section,
 .facility-section,
 .division-section,
 .organization-section,
 .gallery-section,
-.contact-detail-section { /* Added contact section */
-    padding: 80px 0; /* Consistent vertical padding */
-    background-color: #fff; /* White background for sections */
-    border-bottom: 1px solid #e0e0e0; /* Subtle separator */
+.contact-detail-section {
+    padding: 80px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-/* Remove border from the last section */
+/* Remove border from the last section (original contact section) */
 .contact-detail-section {
     border-bottom: none;
 }
-
 
 .about-section h2,
 .program-section h2,
@@ -174,11 +184,11 @@ nav ul li a:hover {
 .division-section h2,
 .organization-section h2,
 .gallery-section h2,
-.contact-detail-section h2 { /* Added contact section */
+.contact-detail-section h2 {
     text-align: center;
     color: #004d73; /* Dark Blue */
-    margin-bottom: 50px; /* More space below heading */
-    font-size: 2.5em; /* Larger heading */
+    margin-bottom: 50px;
+    font-size: 2.5em;
     position: relative;
 }
 
@@ -188,7 +198,7 @@ nav ul li a:hover {
 .division-section h2::after,
 .organization-section h2::after,
 .gallery-section h2::after,
-.contact-detail-section h2::after { /* Added contact section */
+.contact-detail-section h2::after {
     content: '';
     display: block;
     width: 60px;
@@ -206,11 +216,14 @@ nav ul li a:hover {
     line-height: 1.7;
 }
 
-/* Program/Division/Facility Grid Styles */
+/* ===================================== */
+/* Grid Layouts for Content Items        */
+/* (Program, Facility, Gallery, Contact) */
+/* ===================================== */
 .program-grid,
 .facility-grid,
 .gallery-grid,
-.contact-grid { /* Added contact grid */
+.contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
@@ -218,11 +231,11 @@ nav ul li a:hover {
 
 .program-item,
 .facility-item,
-.contact-info-item { /* Added contact item */
+.contact-info-item {
     background-color: #fff;
-    padding: 30px; /* More padding */
-    border-radius: 10px; /* More rounded */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Stronger shadow */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #bbdefb; /* Light blue border */
@@ -230,14 +243,14 @@ nav ul li a:hover {
 
 .program-item:hover,
 .facility-item:hover,
-.contact-info-item:hover { /* Added contact item */
-    transform: translateY(-8px); /* More pronounced lift */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Stronger shadow on hover */
+.contact-info-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .program-item h3,
 .facility-item h3,
-.contact-info-item h3 { /* Added contact item */
+.contact-info-item h3 {
     color: #1976d2; /* Medium blue */
     margin-top: 0;
     font-size: 1.4em;
@@ -245,39 +258,9 @@ nav ul li a:hover {
 }
 
 .program-item p,
-.contact-info-item p { /* Added contact item */
+.contact-info-item p {
     font-size: 0.95em;
     color: #666;
-}
-
-/* Specific styling for PCB order section within program item */
-.program-item h4 {
-    color: #004d73; /* Dark Blue */
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
-
-.program-item ul {
-    list-style-type: disc; /* Use discs for unordered lists */
-    padding-left: 20px;
-    margin-bottom: 15px;
-    text-align: left; /* Align list items to left */
-    font-size: 0.9em;
-    color: #666;
-}
-
-.program-item ol {
-    list-style-type: decimal; /* Use numbers for ordered lists */
-    padding-left: 20px;
-    margin-bottom: 15px;
-    text-align: left; /* Align list items to left */
-    font-size: 0.9em;
-    color: #666;
-}
-
-.program-item li {
-    margin-bottom: 8px;
 }
 
 .facility-item img {
@@ -289,7 +272,9 @@ nav ul li a:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Organization Chart Styles */
+/* ===================================== */
+/* Organization Chart Styles             */
+/* ===================================== */
 .org-chart {
     display: flex;
     flex-direction: column;
@@ -390,7 +375,7 @@ nav ul li a:hover {
 }
 
 /* Level 1 (Kepala) to Level 2 (Managers) */
-.level-1::after { /* Vertical line down from Kepala */
+.level-1::after {
     bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
@@ -403,7 +388,7 @@ nav ul li a:hover {
     position: relative;
 }
 
-.level-2::before { /* Vertical line up to horizontal line of managers */
+.level-2::before {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -411,22 +396,22 @@ nav ul li a:hover {
     height: 25px;
 }
 
-.level-2::after { /* Horizontal line connecting managers */
-    top: 25px; /* Position below the vertical line */
+.level-2::after {
+    top: 25px;
     left: 0;
     right: 0;
     height: 2px;
     margin: 0 auto;
-    width: calc(100% - 100px); /* Adjust width to connect managers */
+    width: calc(100% - 100px);
     max-width: 400px;
 }
 
 .level-2 > .org-node {
-    margin-top: 25px; /* Push nodes down to make space for lines */
+    margin-top: 25px;
 }
 
-.level-2 > .org-node::before { /* Vertical lines from horizontal line to each manager node */
-    top: 0; /* Position at the top of the node */
+.level-2 > .org-node::before {
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
@@ -435,11 +420,11 @@ nav ul li a:hover {
 
 /* Level 2 (Manager Project) to Level 3 (Project Team) */
 .level-3-project-team {
-    padding-top: 25px; /* Space for incoming line from above */
+    padding-top: 25px;
     position: relative;
 }
 
-.level-3-project-team::before { /* Vertical line down from Manager Project */
+.level-3-project-team::before {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -447,13 +432,13 @@ nav ul li a:hover {
     height: 25px;
 }
 
-.level-3-project-team::after { /* Horizontal line connecting project team members */
+.level-3-project-team::after {
     top: 25px;
     left: 0;
     right: 0;
     height: 2px;
     margin: 0 auto;
-    width: calc(100% - 100px); /* Adjust width */
+    width: calc(100% - 100px);
     max-width: 800px;
 }
 
@@ -461,7 +446,7 @@ nav ul li a:hover {
     margin-top: 25px;
 }
 
-.level-3-project-team > .org-node::before { /* Vertical lines from horizontal line to each project team node */
+.level-3-project-team > .org-node::before {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -470,7 +455,6 @@ nav ul li a:hover {
 }
 
 /* Level 4 (Supervisors) */
-/* The same logic applies: vertical line from above, then horizontal, then vertical to nodes */
 .level-4 {
     padding-top: 25px;
     position: relative;
@@ -578,8 +562,9 @@ nav ul li a:hover {
     height: 25px;
 }
 
-
-/* Gallery Styles */
+/* ===================================== */
+/* Gallery Styles                        */
+/* ===================================== */
 .gallery-grid img {
     width: 100%;
     height: 280px; /* Slightly taller images */
@@ -594,7 +579,9 @@ nav ul li a:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* Contact Section Specific Styles */
+/* ===================================== */
+/* Contact Section Specific Styles       */
+/* ===================================== */
 .contact-info-item {
     text-align: left; /* Align text left for readability in contact section */
 }
@@ -610,12 +597,14 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Footer Styles */
+/* ===================================== */
+/* Footer Styles                         */
+/* ===================================== */
 footer {
     background-color: #004d73; /* Dark Blue */
     color: #e3f2fd; /* Lighter text color */
     text-align: center;
-    padding: 40px 0; /* More padding */
+    padding: 40px 0;
     font-size: 0.95em;
 }
 
@@ -623,7 +612,103 @@ footer p {
     margin: 8px 0;
 }
 
-/* Responsive Adjustments */
+/* ===================================== */
+/* NEW PCB DETAIL SECTION STYLES         */
+/* ===================================== */
+.pcb-detail-section {
+    padding: 80px 0;
+    background-color: #f0f8ff; /* Slightly different background to distinguish */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.pcb-detail-section h2 {
+    text-align: center;
+    color: #004d73;
+    margin-bottom: 50px;
+    font-size: 2.5em;
+    position: relative;
+}
+
+.pcb-detail-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #1976d2;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.pcb-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted min-width for larger content */
+    gap: 30px;
+    align-items: start; /* Align items to the top */
+}
+
+.pcb-detail-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #bbdefb;
+    text-align: left; /* Default text alignment for readability */
+}
+
+.pcb-detail-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.pcb-detail-item h3 {
+    color: #1976d2;
+    margin-top: 0;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    text-align: center; /* Center align headings within the item */
+}
+
+.pcb-detail-item p,
+.pcb-detail-item ul,
+.pcb-detail-item ol {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+    padding-left: 20px; /* Indent lists */
+}
+
+.pcb-detail-item ul li,
+.pcb-detail-item ol li {
+    margin-bottom: 8px;
+}
+
+.pcb-detail-item .button {
+    margin-top: 20px;
+    width: fit-content; /* Ensure button doesn't stretch */
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* Make it a block element to center with margin auto */
+}
+
+.pcb-detail-item .note {
+    font-style: italic;
+    font-size: 0.85em;
+    color: #888;
+    text-align: center; /* Center align note */
+    padding-left: 0; /* Remove padding for center alignment */
+}
+
+/* Specific styling for the 'Cara Memasukkan Orderan' box to take full width on larger screens */
+@media (min-width: 992px) { /* Apply only on larger screens */
+    .pcb-detail-item.full-width {
+        grid-column: 1 / -1; /* Spans all columns */
+    }
+}
+
+/* ===================================== */
+/* Responsive Adjustments                */
+/* ===================================== */
 @media (max-width: 992px) { /* Tablet and smaller */
     .container {
         width: 95%; /* Use more width on smaller screens */
@@ -693,7 +778,8 @@ footer p {
     .division-section h2,
     .organization-section h2,
     .gallery-section h2,
-    .contact-detail-section h2 {
+    .contact-detail-section h2,
+    .pcb-detail-section h2 { /* Added for new section */
         font-size: 2.2em;
         margin-bottom: 30px;
     }
@@ -701,7 +787,8 @@ footer p {
     .program-grid,
     .facility-grid,
     .gallery-grid,
-    .contact-grid {
+    .contact-grid,
+    .pcb-detail-grid { /* Added for new section */
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min-width */
     }
 
@@ -787,26 +874,26 @@ footer p {
     }
 
     header h1 {
-        font-size: 1.1em; /* Lebih kecil lagi untuk ponsel */
+        font-size: 1.1em;
     }
     header h2 {
-        font-size: 0.7em; /* Lebih kecil lagi untuk ponsel */
+        font-size: 0.7em;
     }
     nav ul {
         flex-direction: column; /* Stack nav items even more */
         align-items: center;
-        gap: 8px; /* Mengurangi gap di ponsel */
+        gap: 8px;
     }
     nav ul li {
         margin-left: 0;
     }
     nav ul li a {
-        font-size: 0.8em; /* Lebih kecil lagi untuk ponsel */
-        padding: 2px 0; /* Mengurangi padding di ponsel */
+        font-size: 0.8em;
+        padding: 2px 0;
     }
 
     #hero {
-        padding: 60px 0; /* Reduce padding for smaller screens */
+        padding: 60px 0;
     }
 
     #hero .hero-image,
@@ -819,7 +906,7 @@ footer p {
     }
 
     .button {
-        padding: 12px 25px; /* Slightly smaller button */
+        padding: 12px 25px;
         font-size: 0.9em;
     }
 
@@ -829,21 +916,24 @@ footer p {
     .division-section h2,
     .organization-section h2,
     .gallery-section h2,
-    .contact-detail-section h2 {
+    .contact-detail-section h2,
+    .pcb-detail-section h2 { /* Added for new section */
         font-size: 1.8em;
     }
 
     .program-grid,
     .facility-grid,
     .gallery-grid,
-    .contact-grid {
+    .contact-grid,
+    .pcb-detail-grid { /* Added for new section */
         grid-template-columns: 1fr; /* Single column layout for very small screens */
     }
 
     .program-item,
     .facility-item,
-    .contact-info-item {
-        padding: 20px; /* Reduce padding */
+    .contact-info-item,
+    .pcb-detail-item { /* Added for new section */
+        padding: 20px;
     }
 
     .org-node {
@@ -864,7 +954,4 @@ footer p {
     .org-subtitle {
         font-size: 0.8em;
     }
-
-    /* Fine-tune connecting lines for very small screens if needed, 
-       but the tablet adjustments should largely suffice. */
 }

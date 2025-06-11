@@ -26,9 +26,17 @@ header {
     color: #fff;
     padding: 10px 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    position: sticky;
+    position: fixed; /* Ubah dari sticky ke fixed */
     top: 0;
+    left: 0;
+    width: 100%; /* Pastikan header membentang selebar layar */
     z-index: 1000;
+    transition: transform 0.3s ease-out; /* Tambahkan transisi untuk efek slide */
+}
+
+/* Kelas untuk menyembunyikan header */
+header.header-hidden {
+    transform: translateY(-100%); /* Geser header ke atas keluar dari tampilan */
 }
 
 header .container {
@@ -103,18 +111,20 @@ nav ul li a:hover {
     padding: 80px 0;
     text-align: center;
     overflow: hidden;
+    /* Tambahkan padding-top untuk memberi ruang di bawah header fixed */
+    padding-top: calc(80px + 70px); /* Contoh: 70px adalah perkiraan tinggi header */
 }
 
 #hero .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Default: berdampingan */
     align-items: center;
     justify-content: center;
     gap: 40px;
 }
 
 #hero .hero-image {
-    max-width: 30%; /* Tetap ini untuk desktop */
+    max-width: 30%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0,0,0,0.15);
@@ -122,7 +132,7 @@ nav ul li a:hover {
 }
 
 #hero .hero-text {
-    max-width: 50%; /* Tetap ini untuk desktop */
+    max-width: 50%;
     text-align: left;
 }
 
@@ -697,29 +707,55 @@ footer p {
 /* ===================================== */
 /* Responsive Adjustments                */
 /* ===================================== */
-@media (max-width: 992px) { /* Tablet and smaller */
+
+/* Ukuran Layar yang lebih besar (Tablet landscape ke atas) */
+@media (min-width: 768px) { /* Ini akan berlaku untuk tablet dan desktop */
+    #hero .container {
+        flex-direction: row; /* Tetap berdampingan */
+        flex-wrap: nowrap; /* Jangan wrapping */
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    #hero .hero-image {
+        max-width: 30%;
+        margin: 0;
+    }
+
+    #hero .hero-text {
+        max-width: 50%;
+        text-align: left;
+    }
+}
+
+
+/* Ukuran Layar Mobile (Portrait - di bawah 768px) */
+@media (max-width: 767px) {
     .container {
         width: 95%;
+        padding: 15px 0;
     }
 
     header .container {
         flex-direction: column;
         text-align: center;
-        gap: 8px;
+        gap: 5px; /* Mengurangi gap di mobile */
     }
 
     header .logo {
         margin-right: 0;
         margin-bottom: 5px;
-        height: 40px;
+        height: 35px; /* Mengecilkan logo di mobile */
     }
 
     header h1 {
-        font-size: 1.2em;
+        font-size: 1.05em; /* Mengecilkan judul utama di mobile */
         min-width: unset;
+        white-space: normal; /* Izinkan wrapping */
     }
     header h2 {
-        font-size: 0.8em;
+        font-size: 0.7em; /* Mengecilkan sub-judul di mobile */
         flex-basis: 100%;
         text-align: center;
     }
@@ -730,185 +766,61 @@ footer p {
     }
 
     nav ul {
-        gap: 10px;
+        flex-direction: column; /* Tumpuk menu navigasi */
+        align-items: center;
+        gap: 5px; /* Mengurangi spacing antar item navigasi */
     }
 
     nav ul li a {
-        font-size: 0.85em;
-        padding: 3px 0;
-    }
-
-    #hero {
-        padding: 60px 0;
-    }
-
-    #hero .container {
-        flex-direction: column; /* Stack image and text vertically on tablets */
-        gap: 30px;
-    }
-
-    #hero .hero-image {
-        max-width: 60%; /* Berikan lebar yang lebih proporsional untuk tablet */
-        /* Hapus height: auto; jika menyebabkan masalah, biarkan object-fit yang mengatur proporsi */
-    }
-
-    #hero .hero-text {
-        max-width: 90%; /* Ambil lebih banyak lebar untuk teks di tablet */
-        text-align: center; /* Pusatkan teks hero di tablet */
-    }
-
-    #hero .hero-text h3 {
-        font-size: 2em;
-    }
-
-    #hero .hero-text p {
-        font-size: 1.05em;
-    }
-
-    .about-section h2,
-    .program-section h2,
-    .facility-section h2,
-    .division-section h2,
-    .organization-section h2,
-    .gallery-section h2,
-    .contact-detail-section h2,
-    .pcb-detail-section h2 {
-        font-size: 2.2em;
-        margin-bottom: 30px;
-    }
-
-    .program-grid,
-    .facility-grid,
-    .gallery-grid,
-    .contact-grid,
-    .pcb-detail-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    /* Organization Chart for smaller screens (vertical stacking) */
-    .org-chart .level-1,
-    .org-chart .level-2,
-    .org-chart .level-3-project-team,
-    .org-chart .level-4,
-    .org-chart .level-5,
-    .org-chart .level-6 {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 30px;
-    }
-
-    .org-node {
-        margin: 15px 0;
-        width: 90%;
-        min-width: unset;
-        max-width: 300px;
-    }
-
-    /* Adjust connecting lines for vertical stacking */
-    .level-1::after,
-    .level-2::before,
-    .level-3-project-team::before,
-    .level-4::before,
-    .level-5::before,
-    .level-6::before {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 25px;
-    }
-
-    .level-2::after,
-    .level-3-project-team::after,
-    .level-4::after,
-    .level-5::after,
-    .level-6::after {
-        content: none; /* Remove horizontal lines */
-    }
-
-    .level-2 > .org-node,
-    .level-3-project-team > .org-node,
-    .level-4 > .org-node,
-    .level-5 > .org-node,
-    .level-6 > .org-node {
-        margin-top: 0;
-        padding-top: 25px;
-    }
-
-    .level-2 > .org-node::before,
-    .level-3-project-team > .org-node::before,
-    .level-4 > .org-node::before,
-    .level-5 > .org-node::before,
-    .level-6 > .org-node::before {
-        content: none;
-    }
-
-    .level-2 .org-node:last-child::after,
-    .level-3-project-team .org-node:last-child::after,
-    .level-4 .org-node:last-child::after,
-    .level-5 .org-node:last-child::after {
-        content: '';
-        position: absolute;
-        bottom: -25px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 25px;
-        background-color: #90caf9;
-        z-index: -1;
-    }
-}
-
-@media (max-width: 576px) { /* Smaller phones */
-    .container {
-        width: 95%;
-    }
-
-    header h1 {
-        font-size: 1.1em;
-    }
-    header h2 {
-        font-size: 0.7em;
-    }
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-    nav ul li {
-        margin-left: 0;
-    }
-    nav ul li a {
-        font-size: 0.8em;
+        font-size: 0.8em; /* Mengecilkan font navigasi di mobile */
         padding: 2px 0;
     }
 
     #hero {
-        padding: 40px 0; /* Kurangi padding vertikal lebih jauh untuk ponsel */
+        padding: 40px 0; /* Kurangi padding vertikal */
+        padding-top: calc(40px + 70px); /* Sesuaikan padding-top untuk mobile juga */
+    }
+
+    #hero .container {
+        flex-direction: column; /* Tumpuk gambar dan teks di mobile */
+        gap: 20px;
     }
 
     #hero .hero-image {
         max-width: 80%; /* Sesuaikan lebar gambar hero agar tidak terlalu besar di ponsel */
-        margin-bottom: 20px; /* Tambahkan sedikit ruang di bawah gambar */
+        margin-bottom: 10px; /* Tambahkan sedikit ruang di bawah gambar */
     }
 
     #hero .hero-text {
         max-width: 100%; /* Pastikan teks menggunakan lebar penuh di ponsel */
         padding: 0 15px; /* Tambahkan padding horizontal agar teks tidak menempel ke tepi */
+        text-align: center; /* Pusatkan teks hero di ponsel */
     }
 
     #hero .hero-text h3 {
-        font-size: 1.6em; /* Sesuaikan ukuran font H3 untuk ponsel */
-        margin-bottom: 15px;
+        font-size: 1.8em; /* Sesuaikan ukuran font H3 untuk ponsel */
+        margin-bottom: 10px;
     }
 
     #hero .hero-text p {
-        font-size: 0.95em; /* Sesuaikan ukuran font paragraf untuk ponsel */
-        margin-bottom: 25px;
+        font-size: 0.9em; /* Sesuaikan ukuran font paragraf untuk ponsel */
+        margin-bottom: 20px;
     }
 
     .button {
-        padding: 12px 25px;
-        font-size: 0.9em;
+        padding: 10px 20px;
+        font-size: 0.85em;
+    }
+
+    .about-section,
+    .program-section,
+    .facility-section,
+    .division-section,
+    .organization-section,
+    .gallery-section,
+    .contact-detail-section,
+    .pcb-detail-section {
+        padding: 50px 0; /* Kurangi padding section di mobile */
     }
 
     .about-section h2,
@@ -919,7 +831,8 @@ footer p {
     .gallery-section h2,
     .contact-detail-section h2,
     .pcb-detail-section h2 {
-        font-size: 1.8em;
+        font-size: 2em; /* Sesuaikan ukuran judul section di mobile */
+        margin-bottom: 25px;
     }
 
     .program-grid,
@@ -927,7 +840,8 @@ footer p {
     .gallery-grid,
     .contact-grid,
     .pcb-detail-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column layout untuk mobile */
+        gap: 20px;
     }
 
     .program-item,
@@ -937,22 +851,60 @@ footer p {
         padding: 20px;
     }
 
+    .org-chart .level-1,
+    .org-chart .level-2,
+    .org-chart .level-3-project-team,
+    .org-chart .level-4,
+    .org-chart .level-5,
+    .org-chart .level-6 {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
     .org-node {
-        padding: 15px 10px;
-        min-width: 150px;
-        max-width: 95%;
+        margin: 10px 0;
+        width: 95%;
+        min-width: unset;
+        max-width: 280px; /* Batasi max-width untuk node di mobile */
     }
 
     .org-photo-circle {
-        width: 70px;
-        height: 70px;
+        width: 60px; /* Lebih kecil */
+        height: 60px; /* Lebih kecil */
+        margin-bottom: 8px;
     }
 
     .org-title {
-        font-size: 1em;
+        font-size: 0.95em;
     }
 
     .org-subtitle {
-        font-size: 0.8em;
+        font-size: 0.75em;
+    }
+
+    /* Penyesuaian garis di struktur organisasi untuk tampilan mobile */
+    .level-1::after,
+    .level-2::before,
+    .level-3-project-team::before,
+    .level-4::before,
+    .level-5::before,
+    .level-6::before {
+        height: 20px; /* Kurangi tinggi garis vertikal */
+        bottom: -20px;
+    }
+    .level-2 > .org-node,
+    .level-3-project-team > .org-node,
+    .level-4 > .org-node,
+    .level-5 > .org-node,
+    .level-6 > .org-node {
+        padding-top: 20px;
+    }
+    .level-2 .org-node:last-child::after,
+    .level-3-project-team .org-node:last-child::after,
+    .level-4 .org-node:last-child::after,
+    .level-5 .org-node:last-child::after {
+        height: 20px;
+        bottom: -20px;
     }
 }

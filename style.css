@@ -24,51 +24,51 @@ body {
 header {
     background-color: #004d73; /* Dark Blue */
     color: #fff;
-    padding: 10px 0; /* Mengubah padding vertikal menjadi 10px untuk membuatnya lebih ringkas */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.25); /* Stronger shadow */
-    position: sticky; /* Make header sticky */
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure it stays on top */
+    z-index: 1000;
 }
 
 header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 10px; /* Mengurangi gap antar elemen header */
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 header .logo {
-    height: 50px; /* Mengurangi tinggi logo secara signifikan dari 200px menjadi 50px */
-    margin-right: 10px; /* Mengurangi margin kanan logo */
+    height: 50px;
+    margin-right: 10px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.4em; /* Mengurangi ukuran font judul utama */
-    flex-grow: 1; /* Allows h1 to take available space */
-    white-space: nowrap; /* Prevent line break for H1 */
-    min-width: 150px; /* Menyesuaikan min-width agar tidak terlalu kecil */
+    font-size: 1.4em;
+    flex-grow: 1;
+    white-space: nowrap;
+    min-width: 150px;
 }
 
 header h2 {
     margin: 0;
-    font-size: 0.9em; /* Mengurangi ukuran font sub-judul */
+    font-size: 0.9em;
     font-weight: 400;
-    color: #bbdefb; /* Lighter blue for subtitle */
-    flex-basis: auto; /* Agar tidak selalu ke baris baru, biarkan flexbox yang mengatur */
+    color: #bbdefb;
+    flex-basis: auto;
     text-align: right;
-    width: auto; /* Reset width */
+    width: auto;
 }
 
 /* ===================================== */
 /* Navigation Styles                     */
 /* ===================================== */
 nav {
-    flex-grow: 1; /* Allow nav to take available space */
+    flex-grow: 1;
     display: flex;
-    justify-content: flex-end; /* Align to the right */
+    justify-content: flex-end;
 }
 
 nav ul {
@@ -76,22 +76,22 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap; /* Allow menu items to wrap */
-    gap: 15px; /* Mengurangi spacing between menu items */
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    padding: 5px 0; /* Mengurangi padding vertikal link navigasi */
+    padding: 5px 0;
     transition: color 0.3s ease, border-bottom 0.3s ease;
-    white-space: nowrap; /* Prevent line break for nav items */
-    font-size: 0.9em; /* Mengurangi ukuran font navigasi */
+    white-space: nowrap;
+    font-size: 0.9em;
 }
 
 nav ul li a:hover {
-    color: #90caf9; /* Lighter blue on hover */
+    color: #90caf9;
     border-bottom: 2px solid #90caf9;
 }
 
@@ -99,42 +99,42 @@ nav ul li a:hover {
 /* Hero Section                          */
 /* ===================================== */
 #hero {
-    background-color: #e3f2fd; /* Very light blue background */
-    padding: 80px 0; /* More vertical padding */
+    background-color: #e3f2fd;
+    padding: 80px 0;
     text-align: center;
-    overflow: hidden; /* Clear any floating elements */
+    overflow: hidden;
 }
 
 #hero .container {
     display: flex;
-    flex-direction: row; /* Default to row */
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 40px; /* Space between image and text */
+    gap: 40px;
 }
 
 #hero .hero-image {
-    max-width: 30%;
+    max-width: 30%; /* Tetap ini untuk desktop */
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Stronger shadow */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
     object-fit: cover;
 }
 
 #hero .hero-text {
-    max-width: 50%;
+    max-width: 50%; /* Tetap ini untuk desktop */
     text-align: left;
 }
 
 #hero .hero-text h3 {
-    font-size: 2.5em; /* Larger heading */
-    color: #004d73; /* Dark Blue */
+    font-size: 2.5em;
+    color: #004d73;
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 #hero .hero-text p {
-    font-size: 1.15em; /* Slightly larger text */
+    font-size: 1.15em;
     margin-bottom: 30px;
     color: #555;
 }
@@ -144,18 +144,18 @@ nav ul li a:hover {
 /* ===================================== */
 .button {
     display: inline-block;
-    background-color: #1976d2; /* Medium blue */
+    background-color: #1976d2;
     color: #fff;
-    padding: 15px 30px; /* Larger padding */
-    border-radius: 8px; /* More rounded corners */
+    padding: 15px 30px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 700; /* Bolder text */
+    font-weight: 700;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
-    background-color: #1565c0; /* Darker blue on hover */
-    transform: translateY(-2px); /* Slight lift effect */
+    background-color: #1565c0;
+    transform: translateY(-2px);
 }
 
 /* ===================================== */
@@ -173,7 +173,6 @@ nav ul li a:hover {
     border-bottom: 1px solid #e0e0e0;
 }
 
-/* Remove border from the last section (original contact section) */
 .contact-detail-section {
     border-bottom: none;
 }
@@ -186,7 +185,7 @@ nav ul li a:hover {
 .gallery-section h2,
 .contact-detail-section h2 {
     text-align: center;
-    color: #004d73; /* Dark Blue */
+    color: #004d73;
     margin-bottom: 50px;
     font-size: 2.5em;
     position: relative;
@@ -203,7 +202,7 @@ nav ul li a:hover {
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #1976d2; /* Medium blue */
+    background-color: #1976d2;
     margin: 15px auto 0;
     border-radius: 2px;
 }
@@ -238,7 +237,7 @@ nav ul li a:hover {
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #bbdefb; /* Light blue border */
+    border: 1px solid #bbdefb;
 }
 
 .program-item:hover,
@@ -251,7 +250,7 @@ nav ul li a:hover {
 .program-item h3,
 .facility-item h3,
 .contact-info-item h3 {
-    color: #1976d2; /* Medium blue */
+    color: #1976d2;
     margin-top: 0;
     font-size: 1.4em;
     margin-bottom: 15px;
@@ -280,7 +279,7 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-    position: relative; /* For the lines to position correctly */
+    position: relative;
 }
 
 .org-chart .level-1,
@@ -292,17 +291,17 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 50px; /* More space between levels */
-    position: relative; /* For connecting lines */
-    flex-wrap: wrap; /* Allow nodes to wrap on smaller screens */
+    margin-bottom: 50px;
+    position: relative;
+    flex-wrap: wrap;
 }
 
 .org-node {
     background-color: #fff;
-    border: 1px solid #bbdefb; /* Lighter blue border */
+    border: 1px solid #bbdefb;
     border-radius: 10px;
     padding: 20px 15px;
-    margin: 15px; /* Adjust margin for spacing between nodes */
+    margin: 15px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     position: relative;
@@ -313,21 +312,21 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .org-node:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Stronger shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
 .org-photo-circle {
-    width: 90px; /* Larger photo circle */
+    width: 90px;
     height: 90px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 12px auto;
-    border: 3px solid #1976d2; /* Thicker blue border */
+    border: 3px solid #1976d2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -341,8 +340,8 @@ nav ul li a:hover {
 }
 
 .org-title {
-    font-weight: 700; /* Bolder title */
-    color: #004d73; /* Dark Blue */
+    font-weight: 700;
+    color: #004d73;
     font-size: 1.15em;
     margin-bottom: 5px;
 }
@@ -361,7 +360,6 @@ nav ul li a:hover {
 }
 
 /* Connecting Lines */
-/* General line styles for all levels (to be overridden for specific connections) */
 .org-chart .level-1::after,
 .org-chart .level-2::before, .org-chart .level-2::after, .org-chart .level-2 > .org-node::before,
 .org-chart .level-3-project-team::before, .org-chart .level-3-project-team::after, .org-chart .level-3-project-team > .org-node::before,
@@ -370,11 +368,10 @@ nav ul li a:hover {
 .org-chart .level-6::before, .org-chart .level-6::after, .org-chart .level-6 > .org-node::before {
     content: '';
     position: absolute;
-    background-color: #90caf9; /* Lighter blue line */
+    background-color: #90caf9;
     z-index: -1;
 }
 
-/* Level 1 (Kepala) to Level 2 (Managers) */
 .level-1::after {
     bottom: -25px;
     left: 50%;
@@ -384,7 +381,7 @@ nav ul li a:hover {
 }
 
 .level-2 {
-    padding-top: 25px; /* Space for incoming line from above */
+    padding-top: 25px;
     position: relative;
 }
 
@@ -418,7 +415,6 @@ nav ul li a:hover {
     height: 25px;
 }
 
-/* Level 2 (Manager Project) to Level 3 (Project Team) */
 .level-3-project-team {
     padding-top: 25px;
     position: relative;
@@ -454,7 +450,6 @@ nav ul li a:hover {
     height: 25px;
 }
 
-/* Level 4 (Supervisors) */
 .level-4 {
     padding-top: 25px;
     position: relative;
@@ -490,7 +485,6 @@ nav ul li a:hover {
     height: 25px;
 }
 
-/* Level 5 (Anggota Mechanic/Electric/Etching) */
 .level-5 {
     padding-top: 25px;
     position: relative;
@@ -526,7 +520,6 @@ nav ul li a:hover {
     height: 25px;
 }
 
-/* Level 6 (Trainee) */
 .level-6 {
     padding-top: 25px;
     position: relative;
@@ -550,10 +543,6 @@ nav ul li a:hover {
     max-width: 800px;
 }
 
-.level-6 > .org-node {
-    margin-top: 25px;
-}
-
 .level-6 > .org-node::before {
     top: 0;
     left: 50%;
@@ -567,15 +556,15 @@ nav ul li a:hover {
 /* ===================================== */
 .gallery-grid img {
     width: 100%;
-    height: 280px; /* Slightly taller images */
+    height: 280px;
     object-fit: cover;
-    border-radius: 10px; /* More rounded */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.12); /* Stronger shadow */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.05); /* More pronounced zoom */
+    transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
@@ -583,11 +572,11 @@ nav ul li a:hover {
 /* Contact Section Specific Styles       */
 /* ===================================== */
 .contact-info-item {
-    text-align: left; /* Align text left for readability in contact section */
+    text-align: left;
 }
 
 .contact-info-item a {
-    color: #1976d2; /* Link color for contact info */
+    color: #1976d2;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -601,8 +590,8 @@ nav ul li a:hover {
 /* Footer Styles                         */
 /* ===================================== */
 footer {
-    background-color: #004d73; /* Dark Blue */
-    color: #e3f2fd; /* Lighter text color */
+    background-color: #004d73;
+    color: #e3f2fd;
     text-align: center;
     padding: 40px 0;
     font-size: 0.95em;
@@ -613,11 +602,11 @@ footer p {
 }
 
 /* ===================================== */
-/* NEW PCB DETAIL SECTION STYLES         */
+/* PCB Detail Section Styles             */
 /* ===================================== */
 .pcb-detail-section {
     padding: 80px 0;
-    background-color: #f0f8ff; /* Slightly different background to distinguish */
+    background-color: #f0f8ff;
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -641,9 +630,9 @@ footer p {
 
 .pcb-detail-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted min-width for larger content */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    align-items: start; /* Align items to the top */
+    align-items: start;
 }
 
 .pcb-detail-item {
@@ -653,7 +642,7 @@ footer p {
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #bbdefb;
-    text-align: left; /* Default text alignment for readability */
+    text-align: left;
 }
 
 .pcb-detail-item:hover {
@@ -666,7 +655,7 @@ footer p {
     margin-top: 0;
     font-size: 1.4em;
     margin-bottom: 15px;
-    text-align: center; /* Center align headings within the item */
+    text-align: center;
 }
 
 .pcb-detail-item p,
@@ -675,7 +664,7 @@ footer p {
     font-size: 0.95em;
     color: #666;
     margin-bottom: 15px;
-    padding-left: 20px; /* Indent lists */
+    padding-left: 20px;
 }
 
 .pcb-detail-item ul li,
@@ -685,24 +674,23 @@ footer p {
 
 .pcb-detail-item .button {
     margin-top: 20px;
-    width: fit-content; /* Ensure button doesn't stretch */
+    width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    display: block; /* Make it a block element to center with margin auto */
+    display: block;
 }
 
 .pcb-detail-item .note {
     font-style: italic;
     font-size: 0.85em;
     color: #888;
-    text-align: center; /* Center align note */
-    padding-left: 0; /* Remove padding for center alignment */
+    text-align: center;
+    padding-left: 0;
 }
 
-/* Specific styling for the 'Cara Memasukkan Orderan' box to take full width on larger screens */
-@media (min-width: 992px) { /* Apply only on larger screens */
+@media (min-width: 992px) {
     .pcb-detail-item.full-width {
-        grid-column: 1 / -1; /* Spans all columns */
+        grid-column: 1 / -1;
     }
 }
 
@@ -711,61 +699,66 @@ footer p {
 /* ===================================== */
 @media (max-width: 992px) { /* Tablet and smaller */
     .container {
-        width: 95%; /* Use more width on smaller screens */
+        width: 95%;
     }
 
     header .container {
         flex-direction: column;
         text-align: center;
-        gap: 8px; /* Mengurangi gap di tablet */
+        gap: 8px;
     }
 
     header .logo {
         margin-right: 0;
-        margin-bottom: 5px; /* Mengurangi margin bawah logo */
-        height: 40px; /* Mengecilkan logo di tablet */
+        margin-bottom: 5px;
+        height: 40px;
     }
 
     header h1 {
-        font-size: 1.2em; /* Mengecilkan judul utama di tablet */
-        min-width: unset; /* Reset min-width */
+        font-size: 1.2em;
+        min-width: unset;
     }
     header h2 {
-        font-size: 0.8em; /* Mengecilkan sub-judul di tablet */
-        flex-basis: 100%; /* forces h2 to new line on tablets */
-        text-align: center; /* center align h2 on tablets */
+        font-size: 0.8em;
+        flex-basis: 100%;
+        text-align: center;
     }
 
     nav {
         justify-content: center;
-        margin-top: 10px; /* Mengurangi margin atas nav */
+        margin-top: 10px;
     }
 
     nav ul {
-        gap: 10px; /* Mengurangi spacing antar item navigasi */
+        gap: 10px;
     }
 
     nav ul li a {
-        font-size: 0.85em; /* Mengecilkan font navigasi di tablet */
-        padding: 3px 0; /* Mengurangi padding vertikal link navigasi di tablet */
+        font-size: 0.85em;
+        padding: 3px 0;
+    }
+
+    #hero {
+        padding: 60px 0;
     }
 
     #hero .container {
-        flex-direction: column; /* Stack image and text */
+        flex-direction: column; /* Stack image and text vertically on tablets */
         gap: 30px;
     }
 
-    #hero .hero-image,
-    #hero .hero-text {
-        max-width: 90%; /* Take more width on smaller screens */
+    #hero .hero-image {
+        max-width: 60%; /* Berikan lebar yang lebih proporsional untuk tablet */
+        /* Hapus height: auto; jika menyebabkan masalah, biarkan object-fit yang mengatur proporsi */
     }
 
     #hero .hero-text {
-        text-align: center;
+        max-width: 90%; /* Ambil lebih banyak lebar untuk teks di tablet */
+        text-align: center; /* Pusatkan teks hero di tablet */
     }
 
     #hero .hero-text h3 {
-        font-size: 2em; /* Slightly smaller for tablets */
+        font-size: 2em;
     }
 
     #hero .hero-text p {
@@ -779,7 +772,7 @@ footer p {
     .organization-section h2,
     .gallery-section h2,
     .contact-detail-section h2,
-    .pcb-detail-section h2 { /* Added for new section */
+    .pcb-detail-section h2 {
         font-size: 2.2em;
         margin-bottom: 30px;
     }
@@ -788,8 +781,8 @@ footer p {
     .facility-grid,
     .gallery-grid,
     .contact-grid,
-    .pcb-detail-grid { /* Added for new section */
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min-width */
+    .pcb-detail-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     /* Organization Chart for smaller screens (vertical stacking) */
@@ -799,20 +792,19 @@ footer p {
     .org-chart .level-4,
     .org-chart .level-5,
     .org-chart .level-6 {
-        flex-direction: column; /* Stack nodes vertically */
+        flex-direction: column;
         align-items: center;
-        margin-bottom: 30px; /* Adjust space between levels */
+        margin-bottom: 30px;
     }
 
     .org-node {
-        margin: 15px 0; /* Adjust margin for stacked nodes */
-        width: 90%; /* Adjust width */
+        margin: 15px 0;
+        width: 90%;
         min-width: unset;
-        max-width: 300px; /* Limit max-width for stacked nodes */
+        max-width: 300px;
     }
 
     /* Adjust connecting lines for vertical stacking */
-    /* Reset horizontal lines and make vertical lines longer as needed */
     .level-1::after,
     .level-2::before,
     .level-3-project-team::before,
@@ -821,8 +813,8 @@ footer p {
     .level-6::before {
         left: 50%;
         transform: translateX(-50%);
-        width: 2px; /* Keep vertical lines */
-        height: 25px; /* Standard segment length */
+        width: 2px;
+        height: 25px;
     }
 
     .level-2::after,
@@ -833,14 +825,13 @@ footer p {
         content: none; /* Remove horizontal lines */
     }
 
-    /* Adjust positioning of nodes relative to lines for vertical stacking */
     .level-2 > .org-node,
     .level-3-project-team > .org-node,
     .level-4 > .org-node,
     .level-5 > .org-node,
     .level-6 > .org-node {
-        margin-top: 0; /* Reset desktop margin-top */
-        padding-top: 25px; /* Add padding to make space for incoming line */
+        margin-top: 0;
+        padding-top: 25px;
     }
 
     .level-2 > .org-node::before,
@@ -848,29 +839,28 @@ footer p {
     .level-4 > .org-node::before,
     .level-5 > .org-node::before,
     .level-6 > .org-node::before {
-        content: none; /* Remove vertical lines *within* the same level when stacked */
+        content: none;
     }
 
-    /* Ensure specific lines connect to the next level when stacked */
-    .level-2 .org-node:last-child::after, /* Line from last manager to project team level */
-    .level-3-project-team .org-node:last-child::after, /* Line from last project team to supervisor level */
-    .level-4 .org-node:last-child::after, /* Line from last supervisor to Anggota level */
-    .level-5 .org-node:last-child::after /* Line from last Anggota to Trainee level */ {
+    .level-2 .org-node:last-child::after,
+    .level-3-project-team .org-node:last-child::after,
+    .level-4 .org-node:last-child::after,
+    .level-5 .org-node:last-child::after {
         content: '';
         position: absolute;
-        bottom: -25px; /* Halfway to next level */
+        bottom: -25px;
         left: 50%;
         transform: translateX(-50%);
         width: 2px;
         height: 25px;
-        background-color: #90caf9; /* Lighter blue line */
+        background-color: #90caf9;
         z-index: -1;
     }
 }
 
 @media (max-width: 576px) { /* Smaller phones */
     .container {
-        width: 95%; /* Ensure enough padding on very small screens */
+        width: 95%;
     }
 
     header h1 {
@@ -880,7 +870,7 @@ footer p {
         font-size: 0.7em;
     }
     nav ul {
-        flex-direction: column; /* Stack nav items even more */
+        flex-direction: column;
         align-items: center;
         gap: 8px;
     }
@@ -893,16 +883,27 @@ footer p {
     }
 
     #hero {
-        padding: 60px 0;
+        padding: 40px 0; /* Kurangi padding vertikal lebih jauh untuk ponsel */
     }
 
-    #hero .hero-image,
+    #hero .hero-image {
+        max-width: 80%; /* Sesuaikan lebar gambar hero agar tidak terlalu besar di ponsel */
+        margin-bottom: 20px; /* Tambahkan sedikit ruang di bawah gambar */
+    }
+
     #hero .hero-text {
-        max-width: 100%; /* Full width for image and text on small phones */
+        max-width: 100%; /* Pastikan teks menggunakan lebar penuh di ponsel */
+        padding: 0 15px; /* Tambahkan padding horizontal agar teks tidak menempel ke tepi */
     }
 
     #hero .hero-text h3 {
-        font-size: 1.5em;
+        font-size: 1.6em; /* Sesuaikan ukuran font H3 untuk ponsel */
+        margin-bottom: 15px;
+    }
+
+    #hero .hero-text p {
+        font-size: 0.95em; /* Sesuaikan ukuran font paragraf untuk ponsel */
+        margin-bottom: 25px;
     }
 
     .button {
@@ -917,7 +918,7 @@ footer p {
     .organization-section h2,
     .gallery-section h2,
     .contact-detail-section h2,
-    .pcb-detail-section h2 { /* Added for new section */
+    .pcb-detail-section h2 {
         font-size: 1.8em;
     }
 
@@ -925,21 +926,21 @@ footer p {
     .facility-grid,
     .gallery-grid,
     .contact-grid,
-    .pcb-detail-grid { /* Added for new section */
-        grid-template-columns: 1fr; /* Single column layout for very small screens */
+    .pcb-detail-grid {
+        grid-template-columns: 1fr;
     }
 
     .program-item,
     .facility-item,
     .contact-info-item,
-    .pcb-detail-item { /* Added for new section */
+    .pcb-detail-item {
         padding: 20px;
     }
 
     .org-node {
         padding: 15px 10px;
         min-width: 150px;
-        max-width: 95%; /* Allow it to take more width */
+        max-width: 95%;
     }
 
     .org-photo-circle {

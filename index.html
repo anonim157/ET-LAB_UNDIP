@@ -367,5 +367,31 @@
             <p>© 2025 Teaching Factory Universitas Diponegoro. Hak Cipta Dilindungi.</p>
         </div>
     </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+        const headerHeight = header.offsetHeight; // Get header height
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop && scrollTop > headerHeight) {
+                // Scrolling down past header height, hide the header
+                header.classList.add('header-hidden');
+            } else if (scrollTop < lastScrollTop) {
+                // Scrolling up, show the header
+                header.classList.remove('header-hidden');
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // Ensure header is shown if page is at the very top
+        window.addEventListener('load', function() {
+            if (window.pageYOffset === 0) {
+                header.classList.remove('header-hidden');
+            }
+        });
+    </script>
 </body>
 </html>

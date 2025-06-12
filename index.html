@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teaching Factory - Universitas Diponegoro</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap)" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,8 +18,22 @@
             <nav>
                 <ul>
                     <li><a href="#tentang">Tentang Kami</a></li>
-                    <li><a href="#program">Program & Layanan</a></li>
-                    <li><a href="#layanan-pcb-detail">Layanan PCB</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Produk <span class="arrow">▼</span></a>
+                        <div class="dropdown-content">
+                            <a href="#e-katalog-pcb">Cetak PCB</a>
+                            <a href="#e-katalog-akrilik">Custom Akrilik</a>
+                            <a href="#e-katalog-gantungan-kunci">Gantungan Kunci</a>
+                            <a href="#e-katalog-plakat">Plakat</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Layanan <span class="arrow">▼</span></a>
+                        <div class="dropdown-content">
+                            <a href="#program">Program & Layanan</a>
+                            <a href="#layanan-pcb-detail">Layanan PCB</a>
+                        </div>
+                    </li>
                     <li><a href="#fasilitas">Fasilitas</a></li>
                     <li><a href="#divisi">Divisi</a></li>
                     <li><a href="#struktur-organisasi">Struktur Organisasi</a></li>
@@ -82,13 +96,13 @@
                     <div class="pcb-detail-item">
                         <h3>Spesifikasi Bahan PCB</h3>
                         <ul>
-                            <li>**FR-4 (Fiberglass Reinforced Epoxy):** Bahan standar industri, kuat, tahan panas, dan stabil secara elektrik. Ideal untuk aplikasi umum dan proyek yang membutuhkan keandalan tinggi.</li>
-                            <li>**Pertinax (Phenolic Resin Paper):** Pilihan ekonomis untuk aplikasi non-kritis dan prototipe sederhana. Lebih mudah diproses dan cocok untuk sirkuit frekuensi rendah.</li>
+                            <li><strong>FR-4 (Fiberglass Reinforced Epoxy):</strong> Bahan standar industri, kuat, tahan panas, dan stabil secara elektrik. Ideal untuk aplikasi umum dan proyek yang membutuhkan keandalan tinggi.</li>
+                            <li><strong>Pertinax (Phenolic Resin Paper):</strong> Pilihan ekonomis untuk aplikasi non-kritis dan prototipe sederhana. Lebih mudah diproses dan cocok untuk sirkuit frekuensi rendah.</li>
                         </ul>
                     </div>
                     <div class="pcb-detail-item">
                         <h3>Harga Pembuatan PCB</h3>
-                        <p>Mulai dari **Rp 175,-/cm²** (untuk bahan FR-4, satu sisi). Harga dapat bervariasi tergantung:</p>
+                        <p>Mulai dari <strong>Rp 175,-/cm²</strong> (untuk bahan FR-4, satu sisi). Harga dapat bervariasi tergantung:</p>
                         <ul>
                             <li>Jenis bahan (FR-4, Pertinax, dll.)</li>
                             <li>Jumlah lapisan (single-layer)</li>
@@ -98,16 +112,16 @@
                         </ul>
                         <p class="note">*Untuk penawaran harga akurat, mohon hubungi tim marketing kami dengan detail desain Anda.*</p>
                         <h3>Durasi Pengerjaan</h3>
-                        <p>Durasi standar pengerjaan PCB adalah **2 hari kerja**, tergantung pada kompleksitas desain, jenis bahan, jumlah lapisan, dan antrian produksi. Untuk pesanan dalam jumlah besar atau desain kompleks, waktu pengerjaan akan diinformasikan setelah evaluasi desain.</p>
+                        <p>Durasi standar pengerjaan PCB adalah <strong>2 hari kerja</strong>, tergantung pada kompleksitas desain, jenis bahan, jumlah lapisan, dan antrian produksi. Untuk pesanan dalam jumlah besar atau desain kompleks, waktu pengerjaan akan diinformasikan setelah evaluasi desain.</p>
                     </div>
                     <div class="pcb-detail-item full-width">
                         <h3>Cara Memasukkan Orderan</h3>
                         <ol>
-                            <li>**Kirim Desain Anda:** Siapkan file desain PCB Anda (format Gerber files, Altium Designer, Eagle, KiCad, atau format desain relevan lainnya) ke email: <a href="mailto:order.tefa@undip.ac.id">order.tefa@undip.ac.id</a>. Sertakan juga spesifikasi yang diinginkan (jumlah, bahan, lapisan, finishing).</li>
-                            <li>**Konfirmasi & Penawaran:** Tim kami akan meninjau desain Anda dan mengirimkan konfirmasi serta penawaran harga resmi.</li>
-                            <li>**Pembayaran:** Lakukan pembayaran sesuai dengan penawaran.</li>
-                            <li>**Proses Produksi:** Pesanan Anda akan masuk ke antrian produksi.</li>
-                            <li>**Pengiriman/Pengambilan:** Kami akan memberitahu Anda setelah PCB selesai dan siap untuk diambil atau dikirim.</li>
+                            <li><strong>Kirim Desain Anda:</strong> Siapkan file desain PCB Anda (format Gerber files, Altium Designer, Eagle, KiCad, atau format desain relevan lainnya) ke email: <a href="mailto:order.tefa@undip.ac.id">order.tefa@undip.ac.id</a>. Sertakan juga spesifikasi yang diinginkan (jumlah, bahan, lapisan, finishing).</li>
+                            <li><strong>Konfirmasi & Penawaran:</strong> Tim kami akan meninjau desain Anda dan mengirimkan konfirmasi serta penawaran harga resmi.</li>
+                            <li><strong>Pembayaran:</strong> Lakukan pembayaran sesuai dengan penawaran.</li>
+                            <li><strong>Proses Produksi:</strong> Pesanan Anda akan masuk ke antrian produksi.</li>
+                            <li><strong>Pengiriman/Pengambilan:</strong> Kami akan memberitahu Anda setelah PCB selesai dan siap untuk diambil atau dikirim.</li>
                         </ol>
                         <a href="#kontak" class="button">Hubungi Kami untuk Pemesanan</a>
                     </div>
@@ -314,6 +328,47 @@
                 </div>
             </div>
         </section>
+
+        <section id="e-katalog" class="e-catalog-section">
+            <div class="container">
+                <h2>E-Katalog Produk & Layanan</h2>
+                <p class="e-catalog-intro">Jelajahi berbagai produk elektronik dan layanan yang ditawarkan oleh Teaching Factory Elektronika Terpadu. Kami siap membantu Anda dalam mewujudkan ide-ide inovatif!</p>
+                <div class="e-catalog-grid">
+                    <div class="e-catalog-item" id="e-katalog-pcb">
+                        <img src="images/catalog_pcb.jpg" alt="Layanan Pembuatan PCB Kustom">
+                        <h3>Pembuatan PCB Kustom</h3>
+                        <p>Layanan desain dan fabrikasi Printed Circuit Board (PCB) sesuai spesifikasi dan kebutuhan proyek Anda. Tersedia berbagai material dan finishing.</p>
+                        <span class="price">Harga: Mulai Rp 175,-/cm²</span>
+                        <a href="#kontak" class="button button-small">Pesan Sekarang</a>
+                    </div>
+
+                    <div class="e-catalog-item" id="e-katalog-akrilik">
+                        <img src="images/catalog_akrilik.jpg" alt="Layanan Custom Akrilik">
+                        <h3>Custom Akrilik</h3>
+                        <p>Layanan pemotongan dan grafir akrilik sesuai desain kustom Anda untuk berbagai aplikasi, seperti casing elektronik, display, atau plakat.</p>
+                        <span class="price">Harga: Hubungi Kami</span>
+                        <a href="#kontak" class="button button-small">Pesan Sekarang</a>
+                    </div>
+
+                    <div class="e-catalog-item" id="e-katalog-gantungan-kunci">
+                        <img src="images/catalog_gantungan_kunci.jpg" alt="Produk Gantungan Kunci Kustom">
+                        <h3>Gantungan Kunci Kustom</h3>
+                        <p>Buat gantungan kunci unik dengan desain dan bentuk kustom Anda. Ideal untuk merchandise atau hadiah promosi.</p>
+                        <span class="price">Harga: Hubungi Kami</span>
+                        <a href="#kontak" class="button button-small">Pesan Sekarang</a>
+                    </div>
+
+                    <div class="e-catalog-item" id="e-katalog-plakat">
+                        <img src="images/catalog_plakat.jpg" alt="Produk Plakat Kustom">
+                        <h3>Plakat Kustom</h3>
+                        <p>Desain dan produksi plakat akrilik atau bahan lainnya untuk penghargaan, kenang-kenangan, atau acara khusus.</p>
+                        <span class="price">Harga: Hubungi Kami</span>
+                        <a href="#kontak" class="button button-small">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="galeri" class="gallery-section">
             <div class="container">
                 <h2>Galeri Kami</h2>
@@ -344,7 +399,7 @@
                     <p><strong>Teaching Factory Elektronika Terpadu</strong><br>
                     Sekolah Vokasi Universitas Diponegoro<br>
                     Jalan Prof. H. Soedarto, S.H., Tembalang, Semarang 50275</p>
-                    <p><a href="https://maps.app.goo.gl/https://g.co/kgs/ctR7Cmo" target="_blank">Lihat di Google Maps</a></p>
+                    <p><a href="[https://maps.app.goo.gl/https://g.co/kgs/ctR7Cmo](https://maps.app.goo.gl/https://g.co/kgs/ctR7Cmo)" target="_blank">Lihat di Google Maps</a></p>
                 </div>
                 <div class="contact-info-item">
                     <h3>Jam Operasional</h3>
@@ -356,7 +411,7 @@
                     <h3>Layanan & Kerja Sama</h3>
                     <p>Kami terbuka untuk berbagai bentuk kerja sama dalam pengembangan inovasi elektronik, riset, pelatihan khusus, dan proyek kolaboratif dengan industri, institusi pendidikan, maupun komunitas.</p>
                     <p>Jika Anda memiliki ide proyek atau ingin menjajaki potensi kerja sama, jangan ragu untuk menghubungi Manajer Proyek kami atau kirimkan proposal Anda melalui email.</p>
-                    <p><strong>Email Kerja Sama:</strong> <a href="mailto:pteachingfactorysvundip@gmail.com">teachingfactorysvundip@gmail.com</a></p>
+                    <p><strong>Email Kerja Sama:</strong> <a href="mailto:pteachingfactorysvundip@gmail.com">pteachingfactorysvundip@gmail.com</a></p>
                 </div>
             </div>
         </div>
